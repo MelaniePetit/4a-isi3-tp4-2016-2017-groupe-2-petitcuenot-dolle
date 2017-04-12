@@ -14,6 +14,7 @@ public class Polyg extends Forme {
         super(tortue);
         this.a = a;
         this.n = n;
+        deplacement();
     }
 
     public void deplacement() {

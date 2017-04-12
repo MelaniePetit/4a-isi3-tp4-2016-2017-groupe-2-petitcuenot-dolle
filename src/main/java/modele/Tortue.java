@@ -161,4 +161,8 @@ public class Tortue extends Observable{
     public ArrayList<Segment> getListSegments() {
         return listSegments;
     }
+
+    public int getCouleur() {
+        return couleur;
+    }
 }

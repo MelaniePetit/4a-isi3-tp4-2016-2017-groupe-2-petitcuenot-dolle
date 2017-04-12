@@ -11,7 +11,6 @@ public abstract class Forme {
 
     public Forme(Tortue tortue) {
         this.tortue = tortue;
-        deplacement();
     }
 
     public abstract void deplacement();

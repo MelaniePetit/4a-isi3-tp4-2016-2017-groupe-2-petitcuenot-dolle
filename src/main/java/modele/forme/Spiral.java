@@ -16,10 +16,12 @@ public class Spiral extends Forme {
         this.n = n;
         this.a = a;
         this.k = k;
+        deplacement();
     }
 
     public void deplacement() {
-        for (int i = 0; i < k; i++) {
+        for (int i = 0; i < 40; i++) {
+            tortue.couleur(tortue.getCouleur()+1);
             tortue.couleurSuivante();
             tortue.avancer(n);
             tortue.droite(360/a);

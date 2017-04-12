@@ -6,11 +6,13 @@ import modele.Tortue;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created by Mel on 12/04/2017.
  */
-public class FeuilleVue extends JFrame{
+public class FeuilleVue extends JFrame {
 
     public static final Dimension VGAP = new Dimension(1,5);
     public static final Dimension HGAP = new Dimension(5,1);
@@ -175,4 +177,9 @@ public class FeuilleVue extends JFrame{
         String s = inputValue.getText();
         return(s);
     }
+
+
+//    public void update(Observable o, Object arg) {
+//        repaint();
+//    }
 }

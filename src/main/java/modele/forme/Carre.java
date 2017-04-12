@@ -9,6 +9,7 @@ public class Carre extends Forme {
 
     public Carre(Tortue tortue) {
         super(tortue);
+        deplacement();
     }
 
     public void deplacement() {

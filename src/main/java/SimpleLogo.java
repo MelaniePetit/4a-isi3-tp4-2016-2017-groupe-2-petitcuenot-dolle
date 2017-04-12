@@ -24,27 +24,24 @@ import java.awt.event.WindowEvent;
 **************************************************************************/
 
 
-public class SimpleLogo extends JFrame {
+public class SimpleLogo{
+
 	public static final Dimension VGAP = new Dimension(1,5);
 	public static final Dimension HGAP = new Dimension(5,1);
 
 	private static MainControleur mainControleur;
 
-
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Tortue tortue = new Tortue();
-		mainControleur = new MainControleur();
-		mainControleur.setCourante(tortue);
-//		   SwingUtilities.invokeLater(new Runnable(){
-//				public void run(){
-//
-//					SimpleLogo fenetre = new SimpleLogo();
-//					fenetre.setVisible(true);
-//				}
-//			});
+		   SwingUtilities.invokeLater(new Runnable(){
+				public void run(){
+					Tortue tortue = new Tortue();
+					mainControleur = new MainControleur(tortue);
+//					mainControleur.setCourante(tortue);
+				}
+			});
 
 		}
 }

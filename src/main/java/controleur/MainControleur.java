@@ -14,28 +14,16 @@ import java.awt.event.ActionListener;
 public class MainControleur implements ActionListener {
 
     private Tortue courante;
-    private TortueVue feuille;
-    private FeuilleVue vue;
+    private TortueVue tortueVue;
+    private FeuilleVue feuilleVue;
 
-    public MainControleur() {
-        courante = new Tortue();
-        feuille = new TortueVue();
-        vue = new FeuilleVue(this);
-        vue.logoInit();
-        feuille = new TortueVue();
+    public MainControleur(Tortue tortue) {
+        courante = tortue;
+        tortueVue = new TortueVue();
+        feuilleVue = new FeuilleVue(this);
+        feuilleVue.logoInit();
     }
 
-    public void setCourante(Tortue courante) {
-        this.courante = courante;
-    }
-
-    public Tortue getCourante() {
-        return courante;
-    }
-
-    public TortueVue getFeuille() {
-        return feuille;
-    }
 
     /** la gestion des actions des boutons */
     public void actionPerformed(ActionEvent e)
@@ -46,30 +34,30 @@ public class MainControleur implements ActionListener {
         if (c.equals("Avancer")) {
             System.out.println("command avancer");
             try {
-                int v = Integer.parseInt(vue.getInputValue());
+                int v = Integer.parseInt(feuilleVue.getInputValue());
                 courante.avancer(v);
                 courante.notifyObservers();
             } catch (NumberFormatException ex){
-                System.err.println("ce n'est pas un nombre : " + vue.getInputValue());
+                System.err.println("ce n'est pas un nombre : " + feuilleVue.getInputValue());
             }
 
         }
         else if (c.equals("Droite")) {
             try {
-                int v = Integer.parseInt(vue.getInputValue());
+                int v = Integer.parseInt(feuilleVue.getInputValue());
                 courante.droite(v);
                 courante.notifyObservers();
             } catch (NumberFormatException ex){
-                System.err.println("ce n'est pas un nombre : " + vue.getInputValue());
+                System.err.println("ce n'est pas un nombre : " + feuilleVue.getInputValue());
             }
         }
         else if (c.equals("Gauche")) {
             try {
-                int v = Integer.parseInt(vue.getInputValue());
+                int v = Integer.parseInt(feuilleVue.getInputValue());
                 courante.gauche(v);
                 courante.notifyObservers();
             } catch (NumberFormatException ex){
-                System.err.println("ce n'est pas un nombre : " + vue.getInputValue());
+                System.err.println("ce n'est pas un nombre : " + feuilleVue.getInputValue());
             }
         }
         else if (c.equals("Lever")) {
@@ -101,7 +89,8 @@ public class MainControleur implements ActionListener {
         else if (c.equals("Quitter"))
             quitter();
 
-        feuille.repaint();
+        tortueVue.repaint();
+        feuilleVue.repaint();
     }
 
 
@@ -114,22 +103,34 @@ public class MainControleur implements ActionListener {
         courante.poly(60,8);
     }
 
-    public void proc3() {
-        courante.spiral(50,40,6);
-    }
+    public void proc3() {courante.spiral(50,40,6);}
 
     // efface tout et reinitialise la feuille
     private void effacer() {
-        feuille.reset();
-        feuille.repaint();
+        tortueVue.reset();
+        tortueVue.repaint();
 
         // Replace la tortue au centre
-        Dimension size = feuille.getSize();
+        Dimension size = tortueVue.getSize();
         courante.setPosition(size.width/2, size.height/2);
     }
 
     private void quitter() {
         System.exit(0);
+    }
+
+    //GETTERS AND SETTERS
+
+    public void setCourante(Tortue courante) {
+        this.courante = courante;
+    }
+
+    public Tortue getCourante() {
+        return courante;
+    }
+
+    public TortueVue getFeuille() {
+        return tortueVue;
     }
 
 }
