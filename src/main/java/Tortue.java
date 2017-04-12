@@ -21,7 +21,7 @@ import java.util.Iterator;
 
 public class Tortue
 {
-
+	//A DEPLACER
 	protected class Segment {
 		public Point ptStart, ptEnd;
 		public Color color;
@@ -112,6 +112,7 @@ public class Tortue
 		graph.fillPolygon(arrow);
     }
 
+    //A DEPLACER
 	protected Color decodeColor(int c) {
 		switch(c) {
 			case 0: return(Color.black);

@@ -64,6 +64,7 @@ public class SimpleLogo extends JFrame implements ActionListener {
 		});
 	}
 
+	//VUE
 	public void logoInit() {
 		getContentPane().setLayout(new BorderLayout(10,10));
 
@@ -168,6 +169,7 @@ public class SimpleLogo extends JFrame implements ActionListener {
 		return(s);
 	}
 
+	//CONTROLLER
 	/** la gestion des actions des boutons */
 	public void actionPerformed(ActionEvent e)
 	{
@@ -219,6 +221,7 @@ public class SimpleLogo extends JFrame implements ActionListener {
 		feuille.repaint();
 	}
 
+	//CONTROLLER
   	/** les procedures Logo qui combine plusieurs commandes..*/
 	public void proc1() {
 		courante.carre();
@@ -232,6 +235,7 @@ public class SimpleLogo extends JFrame implements ActionListener {
 		courante.spiral(50,40,6);
 	}
 
+	//CONTROLLER
 	// efface tout et reinitialise la feuille
 	public void effacer() {
 		feuille.reset();
@@ -242,6 +246,7 @@ public class SimpleLogo extends JFrame implements ActionListener {
 		courante.setPosition(size.width/2, size.height/2);
 	}
 
+	//VUE
 	//utilitaires pour installer des boutons et des menus
 	public void addButton(JComponent p, String name, String tooltiptext, String imageName) {
 		JButton b;
@@ -265,6 +270,7 @@ public class SimpleLogo extends JFrame implements ActionListener {
 		b.addActionListener(this);
 	}
 
+	//VUE
 	public void addMenuItem(JMenu m, String label, String command, int key) {
 		JMenuItem menuItem;
 		menuItem = new JMenuItem(label);
