@@ -6,8 +6,6 @@ import modele.Tortue;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Observable;
-import java.util.Observer;
 
 /**
  * Created by Mel on 12/04/2017.
@@ -17,14 +15,14 @@ public class FeuilleVue extends JFrame {
     public static final Dimension VGAP = new Dimension(1,5);
     public static final Dimension HGAP = new Dimension(5,1);
 
-    private TortueVue feuille;
+    private TortueVue tortueVue;
     private Tortue courante;
     private JTextField inputValue;
 
     private MainControleur mainControleur;
 
     public FeuilleVue(MainControleur controleur) {
-        super("un logo tout simple");
+        super("Super Turtle");
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent arg0) {
@@ -56,6 +54,7 @@ public class FeuilleVue extends JFrame {
         addButton(toolBar, "Gauche", "Gauche 45", null);
         addButton(toolBar, "Lever", "Lever Crayon", null);
         addButton(toolBar, "Baisser", "Baisser Crayon", null);
+        addButton(toolBar, "Ajout", "Ajouter Tortue", null);
 
         String[] colorStrings = {"noir", "bleu", "cyan","gris fonce","rouge",
                 "vert", "gris clair", "magenta", "orange",
@@ -88,11 +87,12 @@ public class FeuilleVue extends JFrame {
 
         JMenu menuCommandes=new JMenu("Commandes"); // on installe le premier menu
         menubar.add(menuCommandes);
-        addMenuItem(menuCommandes, "Avancer", "Avancer", -1);
-        addMenuItem(menuCommandes, "Droite", "Droite", -1);
-        addMenuItem(menuCommandes, "Gauche", "Gauche", -1);
+        addMenuItem(menuCommandes, "Avancer", "Avancer", 38);
+        addMenuItem(menuCommandes, "Droite", "Droite", 39);
+        addMenuItem(menuCommandes, "Gauche", "Gauche", 37);
         addMenuItem(menuCommandes, "Lever Crayon", "Lever", -1);
         addMenuItem(menuCommandes, "Baisser Crayon", "Baisser", -1);
+        addMenuItem(menuCommandes, "Ajouter Tortue", "Ajout", -1);
 
         JMenu menuHelp=new JMenu("Aide"); // on installe le premier menu
         menubar.add(menuHelp);
@@ -115,21 +115,21 @@ public class FeuilleVue extends JFrame {
 
         getContentPane().add(p2,"South");
 
-        feuille = mainControleur.getFeuille(); //500, 400);
-        feuille.setBackground(Color.white);
-        feuille.setSize(new Dimension(600,400));
-        feuille.setPreferredSize(new Dimension(600,400));
+        tortueVue = mainControleur.getFeuille(); //500, 400);
+        tortueVue.setBackground(Color.white);
+        tortueVue.setSize(new Dimension(600,400));
+        tortueVue.setPreferredSize(new Dimension(600,400));
 
-        getContentPane().add(feuille,"Center");
+        getContentPane().add(tortueVue,"Center");
 
         // Creation de la tortue
         Tortue tortue = mainControleur.getCourante();
 
-        // Deplacement de la tortue au centre de la feuille
+        // Deplacement de la tortue au centre de la tortueVue
         tortue.setPosition(500/2, 400/2);
 
         courante = tortue;
-        feuille.addTortue(tortue);
+        tortueVue.addTortue(tortue);
 
         pack();
         setVisible(true);

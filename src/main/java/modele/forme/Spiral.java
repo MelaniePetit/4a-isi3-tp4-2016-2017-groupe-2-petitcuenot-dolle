@@ -20,9 +20,9 @@ public class Spiral extends Forme {
     }
 
     public void deplacement() {
-        for (int i = 0; i < 40; i++) {
-            tortue.couleur(tortue.getCouleur()+1);
+        for (int i = 0; i < k; i++) {
             tortue.couleurSuivante();
+            tortue.couleur(tortue.getCouleur()+1);
             tortue.avancer(n);
             tortue.droite(360/a);
             n = n+1;

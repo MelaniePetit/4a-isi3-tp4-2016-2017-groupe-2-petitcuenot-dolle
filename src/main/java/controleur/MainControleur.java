@@ -4,9 +4,9 @@ import modele.Tortue;
 import vue.TortueVue;
 import vue.FeuilleVue;
 
+import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 /**
  * Created by Mel on 12/04/2017.
@@ -22,8 +22,8 @@ public class MainControleur implements ActionListener {
         tortueVue = new TortueVue();
         feuilleVue = new FeuilleVue(this);
         feuilleVue.logoInit();
-    }
 
+    }
 
     /** la gestion des actions des boutons */
     public void actionPerformed(ActionEvent e)
@@ -68,6 +68,11 @@ public class MainControleur implements ActionListener {
             courante.baisserCrayon();
             courante.notifyObservers();
         }
+        else if (c.equals("Ajout")){
+            Tortue t = new Tortue();
+            t.setTeteCouleur(courante.getCouleur());
+            tortueVue.addTortue(t);
+        }
 
         // actions des boutons du bas
         else if (c.equals("Proc1")) {
@@ -107,6 +112,8 @@ public class MainControleur implements ActionListener {
 
     // efface tout et reinitialise la feuille
     private void effacer() {
+        tortueVue.getTortues().clear();
+        tortueVue.getTortues().add(courante);
         tortueVue.reset();
         tortueVue.repaint();
 
@@ -118,6 +125,8 @@ public class MainControleur implements ActionListener {
     private void quitter() {
         System.exit(0);
     }
+
+
 
     //GETTERS AND SETTERS
 

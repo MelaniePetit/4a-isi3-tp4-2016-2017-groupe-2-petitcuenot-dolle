@@ -13,9 +13,10 @@ import java.util.Observable;
  */
 public class Tortue extends Observable{
 
-    private static final int rp=10, rb=5; // Taille de la pointe et de la base de la fleche
-    private static final double ratioDegRad = 0.0174533; // Rapport radians/degres (pour la conversion)
+    public static final int rp=10, rb=5; // Taille de la pointe et de la base de la fleche
+    public static final double ratioDegRad = 0.0174533; // Rapport radians/degres (pour la conversion)
 
+    private Color teteCouleur;
     private int couleur;
     private boolean crayon;
     private ArrayList<Segment> listSegments; // Trace de la tortue
@@ -29,17 +30,13 @@ public class Tortue extends Observable{
     }
 
     public void reset() {
-        x = 0;
-        y = 0;
+        x = 500/2;
+        y = 400/2;
         dir = -90;
         couleur = 0;
+        teteCouleur = decodeColor(5);
         crayon = true;
         listSegments.clear();
-    }
-
-    public void setPosition(int newX, int newY) {
-        x = newX;
-        y = newY;
     }
 
     public void avancer(int dist) {
@@ -49,11 +46,11 @@ public class Tortue extends Observable{
         if (crayon) {
             Segment seg = new Segment();
 
-            seg.ptStart.x = x;
-            seg.ptStart.y = y;
-            seg.ptEnd.x = newX;
-            seg.ptEnd.y = newY;
-            seg.color = decodeColor(couleur);
+            seg.getPtStart().x = x;
+            seg.getPtStart().y = y;
+            seg.getPtEnd().x = newX;
+            seg.getPtEnd().y = newY;
+            seg.setColor(decodeColor(couleur));
 
             listSegments.add(seg);
         }
@@ -70,7 +67,7 @@ public class Tortue extends Observable{
         dir = (dir - ang) % 360;
     }
 
-    private Color decodeColor(int c) {
+    public Color decodeColor(int c) {
         switch(c) {
             case 0: return(Color.black);
             case 1: return(Color.blue);
@@ -121,6 +118,7 @@ public class Tortue extends Observable{
         new Spiral(this, n, k, a);
     }
 
+
     //GETTERS AND SETTERS
     public static int getRp() {
         return rp;
@@ -164,5 +162,18 @@ public class Tortue extends Observable{
 
     public int getCouleur() {
         return couleur;
+    }
+
+    public void setPosition(int newX, int newY) {
+        x = newX;
+        y = newY;
+    }
+
+    public Color getTeteCouleur() {
+        return teteCouleur;
+    }
+
+    public void setTeteCouleur(int couleur) {
+        teteCouleur = decodeColor(couleur);
     }
 }
