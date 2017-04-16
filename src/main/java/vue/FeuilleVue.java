@@ -10,16 +10,18 @@ import java.awt.event.*;
 /**
  * Created by Mel on 12/04/2017.
  */
-public class FeuilleVue extends JFrame {
+public class FeuilleVue extends JFrame implements MouseListener{
 
     public static final Dimension VGAP = new Dimension(1,5);
     public static final Dimension HGAP = new Dimension(5,1);
 
     private TortueVue tortueVue;
-    private Tortue courante;
     private JTextField inputValue;
 
     private MainControleur mainControleur;
+
+    private int xClic, yClic;
+    private boolean clic = false;
 
     public FeuilleVue(MainControleur controleur) {
         super("Super Turtle");
@@ -31,6 +33,7 @@ public class FeuilleVue extends JFrame {
             }
         });
         mainControleur = controleur;
+        addMouseListener(this);
 
     }
 
@@ -71,7 +74,7 @@ public class FeuilleVue extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 JComboBox cb = (JComboBox)e.getSource();
                 int n = cb.getSelectedIndex();
-                courante.setColor(n);
+                mainControleur.getCourante().setColor(n);
             }
         });
 
@@ -128,7 +131,7 @@ public class FeuilleVue extends JFrame {
         // Deplacement de la tortue au centre de la tortueVue
         tortue.setPosition(500/2, 400/2);
 
-        courante = tortue;
+        mainControleur.setCourante(tortue);
         tortueVue.addTortue(tortue);
 
         pack();
@@ -178,8 +181,33 @@ public class FeuilleVue extends JFrame {
         return(s);
     }
 
+    public void mouseClicked(MouseEvent e) {
+        clic = true;
+        xClic = e.getX()-8;
+        yClic = e.getY()-101;
 
-//    public void update(Observable o, Object arg) {
-//        repaint();
-//    }
+        for (Tortue t : tortueVue.getTortues()) {
+            if (t.getArrow().contains(xClic, yClic)) {
+                mainControleur.setCourante(t);
+                return;
+            }
+        }
+    }
+
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    public void mouseExited(MouseEvent e) {
+
+    }
+
 }

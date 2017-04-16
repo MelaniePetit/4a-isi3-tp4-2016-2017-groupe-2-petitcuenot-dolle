@@ -5,6 +5,8 @@ import modele.Tortue;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Observable;
@@ -82,11 +84,12 @@ public class TortueVue extends JPanel implements Observer {
 				(int) Math.round( p2.y+r*Math.sin(theta + alpha) ));
 
 		//Base2
-		arrow.addPoint((int) Math.round( p2.x-r*Math.cos(theta - alpha) ),
-				(int) Math.round( p2.y+r*Math.sin(theta - alpha) ));
+		arrow.addPoint((int) Math.round( p2.x-r*Math.cos(theta - alpha)),
+				(int) Math.round( p2.y+r*Math.sin(theta - alpha)));
 
 		arrow.addPoint(p2.x,p2.y);
 
+		tortue.setArrow(arrow);
 		graph.setColor(tortue.getTeteCouleur());
 		graph.fillPolygon(arrow);
 // 		graph.drawOval(tortue.getX() - 10, tortue.getY() -10, 2*10, 2*10);
@@ -109,4 +112,6 @@ public class TortueVue extends JPanel implements Observer {
 	public ArrayList<Tortue> getTortues() {
 		return tortues;
 	}
+
+
 }

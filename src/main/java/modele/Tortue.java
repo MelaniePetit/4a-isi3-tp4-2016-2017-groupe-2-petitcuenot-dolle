@@ -22,6 +22,7 @@ public class Tortue extends Observable{
     private ArrayList<Segment> listSegments; // Trace de la tortue
     private int x, y;
     private int dir;
+    private Polygon arrow;
 
 
     public Tortue() {
@@ -120,40 +121,16 @@ public class Tortue extends Observable{
 
 
     //GETTERS AND SETTERS
-    public static int getRp() {
-        return rp;
-    }
-
-    public static int getRb() {
-        return rb;
-    }
-
-    public static double getRatioDegRad() {
-        return ratioDegRad;
-    }
-
     public int getX() {
         return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
     }
 
     public int getY() {
         return y;
     }
 
-    public void setY(int y) {
-        this.y = y;
-    }
-
     public int getDir() {
         return dir;
-    }
-
-    public void setDir(int dir) {
-        this.dir = dir;
     }
 
     public ArrayList<Segment> getListSegments() {
@@ -175,5 +152,13 @@ public class Tortue extends Observable{
 
     public void setTeteCouleur(int couleur) {
         teteCouleur = decodeColor(couleur);
+    }
+
+    public Polygon getArrow() {
+        return arrow;
+    }
+
+    public void setArrow(Polygon arrow) {
+        this.arrow = arrow;
     }
 }

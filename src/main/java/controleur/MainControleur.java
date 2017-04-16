@@ -70,6 +70,7 @@ public class MainControleur implements ActionListener {
         }
         else if (c.equals("Ajout")){
             Tortue t = new Tortue();
+            t.setColor(courante.getCouleur());
             t.setTeteCouleur(courante.getCouleur());
             tortueVue.addTortue(t);
         }
@@ -142,4 +143,30 @@ public class MainControleur implements ActionListener {
         return tortueVue;
     }
 
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+//    public void mousePressed(MouseEvent me) {
+//        Point p = me.getPoint();
+//        System.out.println("clic !");
+//        for (Tortue t : tortues) {
+//            if (t.getArrow().contains(p)) {
+//                System.out.println("touche");
+//            }
+//        }
+//    }
+
+
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    public void mouseExited(MouseEvent e) {
+
+    }
 }
