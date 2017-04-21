@@ -1,112 +1,85 @@
-package vue;// package logo;
+package vue;
 
+import controleur.LogoTortueControleur;
 import modele.Segment;
 import modele.Tortue;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Iterator;
-import java.util.Observable;
-import java.util.Observer;
 
-public class TortueVue extends JPanel implements Observer {
+/**
+ * Created by Mel on 18/04/2017.
+ */
+public class TortueVue {
+    private Tortue tortue;
+    private LogoTortueControleur logoTortueControleur;
+    private Polygon arrow;
 
-	private ArrayList<Tortue> tortues; // la liste des tortues enregistrees
+    public TortueVue(Tortue tortue, LogoTortueControleur controleur) {
+        this.tortue = tortue;
+        logoTortueControleur = controleur;
+    }
 
-	
-	public TortueVue() {
-		tortues = new ArrayList<Tortue>();
-	}
+    public void dessinerTortue(Graphics graph){
+        if (graph==null)
+            return;
 
-	public void addTortue(Tortue o) {
-		tortues.add(o);
-	}
+        //Dessine les segments
+        for(Iterator it = tortue.getListSegments().iterator(); it.hasNext();) {
+            Segment seg = (Segment) it.next();
+            drawSegment(graph, seg);
+        }
 
-	public void reset() {
-		for (Iterator it = tortues.iterator(); it.hasNext();) {
-			Tortue t = (Tortue) it.next();
-			t.reset();
-		}
-	}
+        //Calcule les 3 coins du triangle a partir de
+        // la position de la tortue p
+        Point p = new Point(tortue.getX(), tortue.getY());
+        arrow = new Polygon();
 
-	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
+        //Calcule des deux bases
+        //Angle de la droite
+        double theta = Tortue.ratioDegRad*(-tortue.getDir());
+        //Demi angle au sommet du triangle
+        double alpha=Math.atan((float)Tortue.rb / (float)Tortue.rp );
+        //Rayon de la fleche
+        double r=Math.sqrt( Tortue.rp * Tortue.rp + Tortue.rb * Tortue.rb);
+        //Sens de la fleche
 
-		Color c = g.getColor();
-		
-		Dimension dim = getSize();
-		g.setColor(Color.white);
-		g.fillRect(0,0,dim.width, dim.height);
-		g.setColor(c);
+        //Pointe
+        Point p2=new Point((int) Math.round(p.x+r*Math.cos(theta)),
+                (int) Math.round(p.y-r*Math.sin(theta)));
+        arrow.addPoint(p2.x,p2.y);
+        arrow.addPoint((int) Math.round( p2.x-r*Math.cos(theta + alpha) ),
+                (int) Math.round( p2.y+r*Math.sin(theta + alpha) ));
 
-		showTurtles(g);
-	}
-	
-	public void showTurtles(Graphics g) {
-		for(Iterator it = tortues.iterator();it.hasNext();) {
-			Tortue t = (Tortue) it.next();
-			drawTurtle(g, t);
-		}
-	}
+        //Base2
+        arrow.addPoint((int) Math.round( p2.x-r*Math.cos(theta - alpha)),
+                (int) Math.round( p2.y+r*Math.sin(theta - alpha)));
 
-	public void drawTurtle (Graphics graph, Tortue tortue) {
-		if (graph==null)
-			return;
-//		Graphics2D graph2D = (Graphics2D) graph;
-		 //Dessine les segments
-		for(Iterator it = tortue.getListSegments().iterator(); it.hasNext();) {
-			Segment seg = (Segment) it.next();
-			drawSegment(graph, seg);
-		}
+        arrow.addPoint(p2.x,p2.y);
 
-		//Calcule les 3 coins du triangle a partir de
-		// la position de la tortue p
-		Point p = new Point(tortue.getX(), tortue.getY());
-		Polygon arrow = new Polygon();
+        graph.setColor(tortue.getTeteCouleur());
+        graph.fillPolygon(arrow);
 
-		//Calcule des deux bases
-		//Angle de la droite
-		double theta = Tortue.ratioDegRad*(-tortue.getDir());
-		//Demi angle au sommet du triangle
-		double alpha=Math.atan((float)Tortue.rb / (float)Tortue.rp );
-		//Rayon de la fleche
-		double r=Math.sqrt( Tortue.rp * Tortue.rp + Tortue.rb * Tortue.rb);
-		//Sens de la fleche
+    }
 
-		//Pointe
-		Point p2=new Point((int) Math.round(p.x+r*Math.cos(theta)),
-				(int) Math.round(p.y-r*Math.sin(theta)));
-		arrow.addPoint(p2.x,p2.y);
-		arrow.addPoint((int) Math.round( p2.x-r*Math.cos(theta + alpha) ),
-				(int) Math.round( p2.y+r*Math.sin(theta + alpha) ));
+    public void drawSegment(Graphics graph, Segment seg) {           //à bouger
+        if (graph==null)
+            return;
 
-		//Base2
-		arrow.addPoint((int) Math.round( p2.x-r*Math.cos(theta - alpha) ),
-				(int) Math.round( p2.y+r*Math.sin(theta - alpha) ));
+        graph.setColor(seg.getColor());
+        graph.drawLine(seg.getPtStart().x, seg.getPtStart().y, seg.getPtEnd().x, seg.getPtEnd().y);
+    }
 
-		arrow.addPoint(p2.x,p2.y);
+    //Getters Setters
 
-		graph.setColor(tortue.getTeteCouleur());
-		graph.fillPolygon(arrow);
-// 		graph.drawOval(tortue.getX() - 10, tortue.getY() -10, 2*10, 2*10);
+    public Tortue getTortue() {
+        return tortue;
+    }
 
-		repaint();
-	}
-
-	public void drawSegment(Graphics graph, Segment seg) {           //à bouger
-		if (graph==null)
-			return;
-
-		graph.setColor(seg.getColor());
-		graph.drawLine(seg.getPtStart().x, seg.getPtStart().y, seg.getPtEnd().x, seg.getPtEnd().y);
-	}
-
-	public void update(Observable o, Object arg) {
-		repaint();
-	}
-
-	public ArrayList<Tortue> getTortues() {
-		return tortues;
-	}
+    public Polygon getArrow() {
+        return arrow;
+    }
 }

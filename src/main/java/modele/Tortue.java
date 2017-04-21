@@ -16,12 +16,12 @@ public class Tortue extends Observable{
     public static final int rp=10, rb=5; // Taille de la pointe et de la base de la fleche
     public static final double ratioDegRad = 0.0174533; // Rapport radians/degres (pour la conversion)
 
-    private Color teteCouleur;
-    private int couleur;
-    private boolean crayon;
-    private ArrayList<Segment> listSegments; // Trace de la tortue
-    private int x, y;
-    private int dir;
+    protected Color teteCouleur;
+    protected int couleur;
+    protected boolean crayon;
+    protected ArrayList<Segment> listSegments; // Trace de la tortue
+    protected int x, y;
+    protected int dir;
 
 
     public Tortue() {
@@ -30,13 +30,15 @@ public class Tortue extends Observable{
     }
 
     public void reset() {
-        x = 500/2;
-        y = 400/2;
+        x = 1000/2;
+        y = 800/2;
         dir = -90;
         couleur = 0;
         teteCouleur = decodeColor(5);
         crayon = true;
         listSegments.clear();
+
+        notifier();
     }
 
     public void avancer(int dist) {
@@ -57,14 +59,17 @@ public class Tortue extends Observable{
 
         x = newX;
         y = newY;
+        notifier();
     }
 
     public void droite(int ang) {
         dir = (dir + ang) % 360;
+        notifier();
     }
 
     public void gauche(int ang) {
         dir = (dir - ang) % 360;
+        notifier();
     }
 
     public Color decodeColor(int c) {
@@ -87,22 +92,28 @@ public class Tortue extends Observable{
 
     public void baisserCrayon() {
         crayon = true;
+        notifier();
     }
 
     public void leverCrayon() {
         crayon = false;
+        notifier();
     }
 
     public void couleur(int n) {
         couleur = n % 12;
+        notifier();
     }
 
     public void couleurSuivante() {
         couleur(couleur ++);
+        notifier();
     }
 
-    public void setColor(int n) {couleur = n;}
-
+    protected void notifier() {
+        setChanged();
+        notifyObservers();
+    }
 
     /** quelques classiques */
 
@@ -120,40 +131,16 @@ public class Tortue extends Observable{
 
 
     //GETTERS AND SETTERS
-    public static int getRp() {
-        return rp;
-    }
-
-    public static int getRb() {
-        return rb;
-    }
-
-    public static double getRatioDegRad() {
-        return ratioDegRad;
-    }
-
     public int getX() {
         return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
     }
 
     public int getY() {
         return y;
     }
 
-    public void setY(int y) {
-        this.y = y;
-    }
-
     public int getDir() {
         return dir;
-    }
-
-    public void setDir(int dir) {
-        this.dir = dir;
     }
 
     public ArrayList<Segment> getListSegments() {
@@ -167,6 +154,7 @@ public class Tortue extends Observable{
     public void setPosition(int newX, int newY) {
         x = newX;
         y = newY;
+        notifier();
     }
 
     public Color getTeteCouleur() {
@@ -176,4 +164,10 @@ public class Tortue extends Observable{
     public void setTeteCouleur(int couleur) {
         teteCouleur = decodeColor(couleur);
     }
+
+    public void setColor(int n) {
+        couleur = n;
+        notifier();
+    }
+
 }

@@ -20,6 +20,7 @@ public class Spiral extends Forme {
     }
 
     public void deplacement() {
+        int colorinit = tortue.getCouleur();
         for (int i = 0; i < k; i++) {
             tortue.couleurSuivante();
             tortue.couleur(tortue.getCouleur()+1);
@@ -27,5 +28,6 @@ public class Spiral extends Forme {
             tortue.droite(360/a);
             n = n+1;
         }
+        tortue.setColor(colorinit);
     }
 }
