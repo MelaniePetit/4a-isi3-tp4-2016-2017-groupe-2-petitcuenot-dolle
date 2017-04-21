@@ -1,11 +1,15 @@
-**Nom/Prénom Etudiant 1 :**
+**Nom/Prénom Etudiant 1 :PETITCUENOT Mélanie**
 
-**Nom/Prénom Etudiant 2 :**
+**Nom/Prénom Etudiant 2 :DOLLE Jérémy**
 
 # Rapport TP4
 
 ## Question 1
-*Exprimer les données de test*
+_Certaines methodes, par exemple la méthode *logoInit()* de la classe SimpleLogo, sont des méthodes qui devraient se 
+trouver dans la vue car il s'agit de l'initilisation de celle-ci. Un autre exemple, la méthode *actionPerformed()* est 
+une méthode que l'on doit retrouver dans un contrôleur (si l'on suit le pattern MVC).
+ 
+![Diagram](images/diagramStart.png)
 
 ## Question 2
 *Rien à rédiger*
