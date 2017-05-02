@@ -3,15 +3,13 @@
 import controleur.LogoTortueAutonomeControleur;
 import controleur.LogoTortueControlableControleur;
 import controleur.LogoTortueControleur;
+import controleur.LogoTortueIntelligenteControleur;
 import modele.LogoTortue;
 import vue.LogoTortueAutonomeVue;
 import vue.LogoTortueControlableVue;
 import vue.LogoTortueVue;
 
 import javax.swing.*;
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class Main {
 
@@ -24,11 +22,9 @@ public class Main {
 				public void run(){
 
 					ImageIcon icon = null;
-					try {
-						icon = new ImageIcon(new URL("http://www.pokepedia.fr/images/thumb/c/c9/Carapuce-DM2.png/150px-Carapuce-DM2.png"));		//mettre le fichier en local
-					} catch (MalformedURLException e) {
-						e.printStackTrace();
-					}
+
+					icon = new ImageIcon("src\\main\\java\\ressources\\carapuce.png");		//mettre le fichier en local
+
 
 					String[] type = {"Controlable", "Autonome", "Intelligente"};
 					JOptionPane jop = new JOptionPane();
@@ -46,17 +42,30 @@ public class Main {
 					LogoTortueControleur logoControleur;
 					LogoTortueVue logoVue;
 					if (rang == 0){
-						logoControleur = new LogoTortueControlableControleur(logo);;
-						logoVue = new LogoTortueControlableVue(logo, logoControleur);
+						logoControleur = new LogoTortueControlableControleur(logo);
+						logoVue = new LogoTortueControlableVue(logo, (LogoTortueControlableControleur) logoControleur);
+						logoControleur.setLogoTortueVue(logoVue);
+						logoVue.setVisible(true);
 					}
 
-					else{
+					else if (rang == 1){
 						logoControleur = new LogoTortueAutonomeControleur(logo);
-						logoVue = new LogoTortueAutonomeVue(logo, logoControleur);
+						logoVue = new LogoTortueAutonomeVue(logo, (LogoTortueAutonomeControleur) logoControleur, rang);
+						logoControleur.setLogoTortueVue(logoVue);
+						logoVue.setVisible(true);
 					}
 
-					logoControleur.setLogoTortueVue(logoVue);
-					logoVue.setVisible(true);
+					else if (rang == 2){
+						logoControleur = new LogoTortueIntelligenteControleur(logo);
+						logoVue = new LogoTortueAutonomeVue(logo, (LogoTortueIntelligenteControleur) logoControleur, rang);
+						logoControleur.setLogoTortueVue(logoVue);
+						logoVue.setVisible(true);
+					}
+
+					else {
+						System.exit(0);
+					}
+
 				}
 
 			});

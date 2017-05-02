@@ -1,35 +1,32 @@
-**Nom/Prénom Etudiant 1 :**
+**PETITCUENOT Mélanie**
 
-**Nom/Prénom Etudiant 2 :**
+**DOLLE Jérémy**
 
 # Rapport TP4
 
 ## Question 1
-*Exprimer les données de test*
-
+*Voir question 3*
 ## Question 2
 *Rien à rédiger*
 
 ## Question 3
-*Rien à rédiger*
+
+*UML du code initial :*
+![UMLinit](images/diagramStart.png)
+
+*UML après refactoring :*
+![UMLmvc](images/diagramMVC.png)
 
 ## Question 4
 *Rien à rédiger*
 
 ## Question 5
-*Expliquer le code ajouté et représenter le patron de conception*
+
+Nous avons implémenté une nouvelle classe *TortueAutonome* qui hérite de la classe *Tortue*.
+Pour ce faire, nous avons mis en place un pattern inspiré du pattern stratégie.
+
+![UMLModele](images/diagramModele.png)
 
 ## Question 6
 *Rien à rédiger*
 
-## Question 7
-*Rien à rédiger*
-
-## Question 8
-*Expliquer l'intérêt du mock*
-
-## Question 9
-*Montrer les résultats de vos rapports d'analyse*
-
-## Question 10
-*Rien à rédiger*

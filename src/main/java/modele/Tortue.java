@@ -22,6 +22,8 @@ public class Tortue extends Observable{
     protected ArrayList<Segment> listSegments; // Trace de la tortue
     protected int x, y;
     protected int dir;
+    protected int vitesse;
+
 
 
     public Tortue() {
@@ -151,14 +153,18 @@ public class Tortue extends Observable{
         return couleur;
     }
 
+    public Color getTeteCouleur() {
+        return teteCouleur;
+    }
+
+    public int getVitesse() {
+        return vitesse;
+    }
+
     public void setPosition(int newX, int newY) {
         x = newX;
         y = newY;
         notifier();
-    }
-
-    public Color getTeteCouleur() {
-        return teteCouleur;
     }
 
     public void setTeteCouleur(int couleur) {
@@ -169,5 +175,10 @@ public class Tortue extends Observable{
         couleur = n;
         notifier();
     }
+
+    public void setDir(int dir) {
+        this.dir = dir;
+    }
+
 
 }

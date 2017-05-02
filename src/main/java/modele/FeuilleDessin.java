@@ -18,14 +18,10 @@ public class FeuilleDessin extends Observable {
         tortues.add(t);
     }
 
-    public void supprimerTortue(Tortue tortue){
-        if (tortues.size() > 1){
-            for (Tortue t : tortues) {
-                if (t == tortue){
-                    tortues.remove(t);
-                    return;
-                }
-            }
+    public void supprimerTortue(){
+        if (tortues.size() > 1) {
+            tortues.remove(tortues.size()-1);
+            return;
         }
         else{
             System.out.println("Impossible de supprimer la tortue, il doit en rester une");
@@ -41,7 +37,7 @@ public class FeuilleDessin extends Observable {
 
     public void faireAvancerTortuesAutonomes() {
         for (Tortue tortue : tortues) {
-            ((TortueAutonome) tortue).avancer();
+            ((TortueAutonome) tortue).avancer(tortues);
         }
     }
 

@@ -71,6 +71,7 @@ public class LogoTortueControlableControleur extends LogoTortueControleur implem
             proc3();
             logoTortue.getCouranteTortue().notifyObservers();
         }
+        super.actionPerformed(e);
     }
 
     /** les procedures LogoTortue qui combine plusieurs commandes..*/

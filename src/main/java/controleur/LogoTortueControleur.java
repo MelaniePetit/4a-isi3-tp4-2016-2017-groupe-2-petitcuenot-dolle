@@ -31,14 +31,13 @@ public class LogoTortueControleur implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         String c = e.getActionCommand();
-
         if (c.equals("Effacer")) {
+            System.out.println("reset la feuille de dessin");
             logoTortue.getDessin().reset();
         }
-        else if (c.equals("Ajout")){
-            System.out.println("ajout tortue");
-            Tortue tortue =  new Tortue();
-            logoTortueVue.getFeuilleDessinVue().ajouterTortue(tortue);
+        else if (c.equals("Supprimer")){
+            System.out.println("Supprime la dernière tortue");
+            logoTortue.getDessin().supprimerTortue();
         }
         else if (c.equals("Quitter"))
             System.exit(0);

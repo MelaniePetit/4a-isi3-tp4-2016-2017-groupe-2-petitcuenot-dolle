@@ -19,12 +19,15 @@ public abstract class LogoTortueVue extends JFrame implements Observer{
     protected LogoTortue logoTortue;
     protected FeuilleDessinVue feuilleDessin;
     protected LogoTortueControleur logoTortueControleur;
+    protected int typeTortue;         //détermine si les tortues doivent etre intelligente ou simplement autonome
 
     public static final Dimension HGAP = new Dimension(5,1);
 
-    public LogoTortueVue(LogoTortue logoTortue, LogoTortueControleur controleur){
+    public LogoTortueVue(LogoTortue logoTortue, LogoTortueControleur controleur, int i){
         super("Super Turtle");
 
+        setResizable(false);
+        typeTortue = i;
         logoTortueControleur = controleur;
 
         this.logoTortue = logoTortue;

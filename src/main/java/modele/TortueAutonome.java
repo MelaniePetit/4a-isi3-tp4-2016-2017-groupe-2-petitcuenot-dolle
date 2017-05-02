@@ -1,13 +1,12 @@
 package modele;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * Created by Mel on 18/04/2017.
+ * Tortue se déplaçant seule en ligne droite à vitesse constante
  */
 public class TortueAutonome extends Tortue {
-
-    protected int vitesse;
 
     public TortueAutonome() {
         super();
@@ -22,14 +21,14 @@ public class TortueAutonome extends Tortue {
         y = r.nextInt(800);
         teteCouleur = decodeColor(r.nextInt(12));
         dir = r.nextInt(360)+1;
-        vitesse = r.nextInt(100);
+        vitesse = r.nextInt(50);
 
         notifier();
     }
 
 
-    public void avancer(){
-            avancer(this.vitesse);
+    public void avancer(ArrayList<Tortue> voisines){
+        avancer(this.vitesse);
 
         //Pour avoir un écran toroïdal
         this.setPosition(
@@ -39,5 +38,17 @@ public class TortueAutonome extends Tortue {
         notifier();
 
     }
+
+    //GETTERS AND SETTERS
+
+
+    public int getVitesse() {
+        return vitesse;
+    }
+
+    public void setVitesse(int vitesse) {
+        this.vitesse = vitesse;
+    }
+
 
 }

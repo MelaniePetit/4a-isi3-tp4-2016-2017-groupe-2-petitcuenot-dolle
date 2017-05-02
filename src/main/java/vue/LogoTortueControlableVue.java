@@ -15,7 +15,7 @@ public class LogoTortueControlableVue extends LogoTortueVue {
     private JTextField inputValue;
 
     public LogoTortueControlableVue(LogoTortue logoTortue, LogoTortueControleur controleur) {
-        super(logoTortue, controleur);
+        super(logoTortue, controleur, 0 );
     }
 
     @Override

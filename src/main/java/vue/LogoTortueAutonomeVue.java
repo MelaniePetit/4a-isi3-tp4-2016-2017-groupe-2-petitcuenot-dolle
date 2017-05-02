@@ -4,6 +4,7 @@ import controleur.LogoTortueControleur;
 import modele.LogoTortue;
 import modele.Tortue;
 import modele.TortueAutonome;
+import modele.TortueIntelligente;
 
 import javax.swing.*;
 
@@ -14,20 +15,32 @@ public class LogoTortueAutonomeVue extends LogoTortueVue {
 
     private JTextField inputValue;
 
-    public LogoTortueAutonomeVue(LogoTortue logoTortue, LogoTortueControleur controleur) {
-        super(logoTortue, controleur);
+
+    public LogoTortueAutonomeVue(LogoTortue logoTortue, LogoTortueControleur controleur, int i) {
+        super(logoTortue, controleur, i);
     }
 
     @Override
     public void logoInit(){
         super.logoInit();
 
-        //ajouter des tortues de base
-        for (int i = 0; i < 20 ; i++){
-            TortueAutonome t = new TortueAutonome();
-            feuilleDessin.ajouterTortue(t);
+        if (typeTortue == 1){
+            //ajouter des tortues autonomes de base
+            for (int i = 0; i < 10 ; i++){
+                TortueAutonome t = new TortueAutonome();
+                feuilleDessin.ajouterTortue(t);
 
+            }
         }
+        else{
+            //ajouter des tortues intelligente
+            for (int i = 0; i < 10 ; i++){
+                TortueIntelligente t = new TortueIntelligente();
+                feuilleDessin.ajouterTortue(t);
+
+            }
+        }
+
 
     }
 
