@@ -13,7 +13,7 @@ import java.util.Observable;
  */
 public class Tortue extends Observable{
 
-    public static final int rp=10, rb=5; // Taille de la pointe et de la base de la fleche
+    public static final int rp=30, rb=10; // Taille de la pointe et de la base de la fleche
     public static final double ratioDegRad = 0.0174533; // Rapport radians/degres (pour la conversion)
 
     protected Color teteCouleur;
@@ -23,6 +23,7 @@ public class Tortue extends Observable{
     protected int x, y;
     protected int dir;
     protected int vitesse;
+    protected int rayon;
 
 
 
@@ -157,8 +158,8 @@ public class Tortue extends Observable{
         return teteCouleur;
     }
 
-    public int getVitesse() {
-        return vitesse;
+    public int getRayon() {
+        return rayon;
     }
 
     public void setPosition(int newX, int newY) {

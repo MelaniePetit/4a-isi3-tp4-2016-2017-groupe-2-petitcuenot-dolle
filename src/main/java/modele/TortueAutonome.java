@@ -26,7 +26,6 @@ public class TortueAutonome extends Tortue {
         notifier();
     }
 
-
     public void avancer(ArrayList<Tortue> voisines){
         avancer(this.vitesse);
 
@@ -40,8 +39,6 @@ public class TortueAutonome extends Tortue {
     }
 
     //GETTERS AND SETTERS
-
-
     public int getVitesse() {
         return vitesse;
     }

@@ -8,7 +8,7 @@ import java.util.Observable;
 public class LogoTortue extends Observable {
 
     protected Tortue couranteTortue;		//Tortue contrôlable
-    protected FeuilleDessin dessin;	        //Feuille de dessin
+    protected FeuilleDessin dessin;	        //Feuille de dessin model
     protected int couranteCouleur;			//Couleur courante
     protected boolean avance = false;               //tortues en mouvement
 

@@ -3,6 +3,7 @@ package vue;
 import controleur.LogoTortueControleur;
 import modele.Segment;
 import modele.Tortue;
+import modele.TortueIntelligente;
 
 import javax.swing.*;
 import java.awt.*;
@@ -63,9 +64,12 @@ public class TortueVue {
         graph.setColor(tortue.getTeteCouleur());
         graph.fillPolygon(arrow);
 
+        graph.setColor(tortue.getTeteCouleur());
+        graph.drawOval((tortue.getX() + p2.x)/2 - tortue.getRayon(), (tortue.getY() + p2.y)/2 - tortue.getRayon(), tortue.getRayon()*2, tortue.getRayon()*2);
     }
 
-    public void drawSegment(Graphics graph, Segment seg) {           //à bouger
+
+    public void drawSegment(Graphics graph, Segment seg) {
         if (graph==null)
             return;
 

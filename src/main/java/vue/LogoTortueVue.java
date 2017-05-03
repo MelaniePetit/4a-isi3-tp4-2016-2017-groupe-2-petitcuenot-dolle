@@ -1,5 +1,6 @@
 package vue;
 
+import controleur.EnvironnementControleur;
 import controleur.LogoTortueControleur;
 import modele.LogoTortue;
 
@@ -32,7 +33,7 @@ public abstract class LogoTortueVue extends JFrame implements Observer{
 
         this.logoTortue = logoTortue;
         logoTortue.addObserver(this);
-        feuilleDessin = new FeuilleDessinVue(logoTortue.getDessin(), logoTortueControleur);
+        feuilleDessin = new FeuilleDessinVue(logoTortue.getDessin(), logoTortueControleur, new EnvironnementControleur());
 
         logoInit();
 

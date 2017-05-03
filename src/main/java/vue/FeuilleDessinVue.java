@@ -1,7 +1,9 @@
 package vue;
 
+import controleur.EnvironnementControleur;
 import controleur.LogoTortueControlableControleur;
 import controleur.LogoTortueControleur;
+import modele.Environnement;
 import modele.FeuilleDessin;
 import modele.Tortue;
 
@@ -19,11 +21,13 @@ import java.util.Observer;
 public class FeuilleDessinVue extends JPanel implements Observer, MouseListener{
 
     protected ArrayList<TortueVue> tortues;
-    protected FeuilleDessin dessin;
+    protected FeuilleDessin dessin;             //ajouter controleur
     protected LogoTortueControleur logoTortueControleur;
+    protected EnvironnementControleur environnement;
 
-    public FeuilleDessinVue(FeuilleDessin feuille, LogoTortueControleur logoControleur) {
+    public FeuilleDessinVue(FeuilleDessin feuille, LogoTortueControleur logoControleur, EnvironnementControleur environnementControleur) {
         logoTortueControleur = logoControleur;
+        environnement = environnementControleur;
         dessin = feuille;
         tortues = new ArrayList<TortueVue>();
         dessin.addObserver(this);
@@ -41,6 +45,8 @@ public class FeuilleDessinVue extends JPanel implements Observer, MouseListener{
         g.setColor(c);
 
         afficherTortues(g);
+            environnement.dessinerObstacles(g);
+
     }
 
     public void ajouterTortue(Tortue tortue) {
