@@ -28,7 +28,7 @@ public class TortueAutonome extends Tortue {
         notifier();
     }
 
-    public void avancer(ArrayList<Tortue> voisines, ArrayList<Obstacle> obstacles){
+    public void avancer(ArrayList<Tortue> voisines, Environnement environnement){
         avancer(this.vitesse);
 
         //Pour avoir un écran toroïdal

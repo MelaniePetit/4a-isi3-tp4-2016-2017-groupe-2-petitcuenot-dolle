@@ -1,17 +1,17 @@
 package controleur;
 
 import modele.LogoTortue;
-import modele.TortueIntelligente;
+import modele.TortueAutonome;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by Mel on 24/04/2017.
+ * Created by Mel on 19/04/2017.
  */
-public class LogoTortueIntelligenteControleur extends LogoTortueControleur implements ActionListener {
-        
-    public LogoTortueIntelligenteControleur(LogoTortue logo) {
+public class TortueAutonomeControleur extends TortueControleur implements ActionListener {
+
+    public TortueAutonomeControleur(LogoTortue logo) {
         super(logo);
     }
 
@@ -28,10 +28,13 @@ public class LogoTortueIntelligenteControleur extends LogoTortueControleur imple
         }
         else if (c.equals("Ajout")){
             System.out.println("ajout tortue");
-            TortueIntelligente tortue =  new TortueIntelligente();
+            TortueAutonome tortue =  new TortueAutonome();
             tortue.setTeteCouleur(logoTortue.getCouranteTortue().getCouleur());
             tortue.setColor(logoTortue.getCouranteTortue().getCouleur());
             mainVue.getFeuilleDessinVue().ajouterTortue(tortue);
         }
+        super.actionPerformed(e);
+
     }
+
 }

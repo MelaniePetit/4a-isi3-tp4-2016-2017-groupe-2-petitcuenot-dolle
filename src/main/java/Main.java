@@ -1,12 +1,12 @@
 // package logo;
 
-import controleur.LogoTortueAutonomeControleur;
-import controleur.LogoTortueControlableControleur;
-import controleur.LogoTortueControleur;
-import controleur.LogoTortueIntelligenteControleur;
+import controleur.TortueAutonomeControleur;
+import controleur.TortueControlableControleur;
+import controleur.TortueControleur;
+import controleur.TortueIntelligenteControleur;
 import modele.LogoTortue;
-import vue.LogoTortueAutonomeVue;
-import vue.LogoTortueControlableVue;
+import vue.FenetreTortueAutonomeVue;
+import vue.FenetreTortueControlableVue;
 import vue.MainVue;
 
 import javax.swing.*;
@@ -39,25 +39,25 @@ public class Main {
 
 					//Instanciation de l'application
 					LogoTortue logo = new LogoTortue();
-					LogoTortueControleur logoControleur;
+					TortueControleur logoControleur;
 					MainVue logoVue;
 					if (rang == 0){
-						logoControleur = new LogoTortueControlableControleur(logo);
-						logoVue = new LogoTortueControlableVue(logo, (LogoTortueControlableControleur) logoControleur);
+						logoControleur = new TortueControlableControleur(logo);
+						logoVue = new FenetreTortueControlableVue(logo, (TortueControlableControleur) logoControleur);
 						logoControleur.setMainVue(logoVue);
 						logoVue.setVisible(true);
 					}
 
 					else if (rang == 1){
-						logoControleur = new LogoTortueAutonomeControleur(logo);
-						logoVue = new LogoTortueAutonomeVue(logo, (LogoTortueAutonomeControleur) logoControleur, rang);
+						logoControleur = new TortueAutonomeControleur(logo);
+						logoVue = new FenetreTortueAutonomeVue(logo, (TortueAutonomeControleur) logoControleur, rang);
 						logoControleur.setMainVue(logoVue);
 						logoVue.setVisible(true);
 					}
 
 					else if (rang == 2){
-						logoControleur = new LogoTortueIntelligenteControleur(logo);
-						logoVue = new LogoTortueAutonomeVue(logo, (LogoTortueIntelligenteControleur) logoControleur, rang);
+						logoControleur = new TortueIntelligenteControleur(logo);
+						logoVue = new FenetreTortueAutonomeVue(logo, (TortueIntelligenteControleur) logoControleur, rang);
 						logoControleur.setMainVue(logoVue);
 						logoVue.setVisible(true);
 					}

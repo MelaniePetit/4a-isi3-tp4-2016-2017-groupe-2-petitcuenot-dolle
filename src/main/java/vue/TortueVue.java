@@ -1,15 +1,10 @@
 package vue;
 
-import controleur.LogoTortueControleur;
+import controleur.TortueControleur;
 import modele.Segment;
 import modele.Tortue;
-import modele.TortueAutonome;
-import modele.TortueIntelligente;
 
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.Iterator;
 
 /**
@@ -17,12 +12,12 @@ import java.util.Iterator;
  */
 public class TortueVue {
     private Tortue tortue;
-    private LogoTortueControleur logoTortueControleur;
+    private TortueControleur tortueControleur;
     private Polygon arrow;
 
-    public TortueVue(Tortue tortue, LogoTortueControleur controleur) {
+    public TortueVue(Tortue tortue, TortueControleur controleur) {
         this.tortue = tortue;
-        logoTortueControleur = controleur;
+        tortueControleur = controleur;
     }
 
     public void dessinerTortue(Graphics graph){

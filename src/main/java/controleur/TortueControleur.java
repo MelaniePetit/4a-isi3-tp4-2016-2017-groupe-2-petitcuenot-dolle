@@ -1,7 +1,7 @@
 package controleur;
 
 import modele.LogoTortue;
-import vue.LogoTortueControlableVue;
+import vue.FenetreTortueControlableVue;
 import vue.MainVue;
 
 import java.awt.event.ActionEvent;
@@ -10,18 +10,18 @@ import java.awt.event.ActionListener;
 /**
  * Created by Mel on 17/04/2017.
  */
-public class LogoTortueControleur implements ActionListener {
+public class TortueControleur implements ActionListener {
 
     protected LogoTortue logoTortue;
     protected MainVue mainVue;
 
-    public LogoTortueControleur(LogoTortue logo) {
+    public TortueControleur(LogoTortue logo) {
         logoTortue = logo;
     }
 
     public int testNombre(){
         try{
-            return Integer.parseInt(((LogoTortueControlableVue) mainVue).getInputValue());
+            return Integer.parseInt(((FenetreTortueControlableVue) mainVue).getInputValue());
         }catch (NumberFormatException e){
             System.out.println("Erreur, nombre incorrect");
             return 0;

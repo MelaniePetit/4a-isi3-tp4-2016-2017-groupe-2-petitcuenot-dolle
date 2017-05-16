@@ -17,6 +17,7 @@ public class FeuilleDessin extends Observable {
 
     public void ajouterTortue(Tortue t) {
         tortues.add(t);
+        environnement.getListeTortue().add(t);
     }
 
     public void supprimerTortue(){
@@ -38,7 +39,7 @@ public class FeuilleDessin extends Observable {
 
     public void faireAvancerTortuesAutonomes() {
         for (Tortue tortue : tortues) {
-            ((TortueAutonome) tortue).avancer(tortues, environnement.getListeObstacle());
+            ((TortueAutonome) tortue).avancer(tortues, environnement);
         }
     }
 

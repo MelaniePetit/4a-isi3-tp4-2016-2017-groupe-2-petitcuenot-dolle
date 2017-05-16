@@ -9,9 +9,9 @@ import java.awt.event.ActionListener;
 /**
  * Created by Mel on 18/04/2017.
  */
-public class LogoTortueControlableControleur extends LogoTortueControleur implements ActionListener {
+public class TortueControlableControleur extends TortueControleur implements ActionListener {
 
-    public LogoTortueControlableControleur(LogoTortue logo) {
+    public TortueControlableControleur(LogoTortue logo) {
         super(logo);
     }
 

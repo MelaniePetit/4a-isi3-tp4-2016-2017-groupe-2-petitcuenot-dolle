@@ -1,7 +1,7 @@
 package vue;
 
 import controleur.EnvironnementControleur;
-import controleur.LogoTortueControleur;
+import controleur.TortueControleur;
 import modele.LogoTortue;
 
 import javax.swing.*;
@@ -18,22 +18,22 @@ import java.util.Observer;
 public abstract class MainVue extends JFrame implements Observer{
 
     protected FeuilleDessinVue feuilleDessinVue;
-    protected LogoTortueControleur logoTortueControleur;
+    protected TortueControleur tortueControleur;
     protected int typeTortue;         //détermine si les tortues doivent etre intelligente ou simplement autonome
 
     public static final Dimension HGAP = new Dimension(5,1);
 
-    public MainVue(LogoTortue logoTortue, LogoTortueControleur controleur, int i){
+    public MainVue(LogoTortue logoTortue, TortueControleur controleur, int i){
         super("Super Turtle");
 
         setResizable(false);
         typeTortue = i;
-        logoTortueControleur = controleur;
+        tortueControleur = controleur;
 
         logoTortue.addObserver(this);
-        feuilleDessinVue = new FeuilleDessinVue(logoTortue.getDessin(), logoTortueControleur, new EnvironnementControleur());
+        feuilleDessinVue = new FeuilleDessinVue(logoTortue.getDessin(), tortueControleur, new EnvironnementControleur());
 
-        logoInit();
+        fenetreInit();
 
         pack();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -41,7 +41,7 @@ public abstract class MainVue extends JFrame implements Observer{
 
     }
 
-    protected void logoInit() {
+    protected void fenetreInit() {
         getContentPane().setLayout(new BorderLayout(10,10));
 
         initMenu();
@@ -62,7 +62,7 @@ public abstract class MainVue extends JFrame implements Observer{
         m.add(menuItem);
 
         menuItem.setActionCommand(command);
-        menuItem.addActionListener(logoTortueControleur);
+        menuItem.addActionListener(tortueControleur);
         if (key > 0) {
             if (key != KeyEvent.VK_DELETE)
                 menuItem.setAccelerator(KeyStroke.getKeyStroke(key, Event.CTRL_MASK, false));
@@ -112,7 +112,7 @@ public abstract class MainVue extends JFrame implements Observer{
         b.setToolTipText(tooltiptext);
         b.setBorder(BorderFactory.createRaisedBevelBorder());
         b.setMargin(new Insets(0,0,0,0));
-        b.addActionListener(logoTortueControleur);
+        b.addActionListener(tortueControleur);
     }
 
     public abstract void optionBouton(JToolBar toolbar);
@@ -144,7 +144,7 @@ public abstract class MainVue extends JFrame implements Observer{
             public void actionPerformed(ActionEvent e) {
                 JComboBox cb = (JComboBox)e.getSource();
                 int n = cb.getSelectedIndex();
-                logoTortueControleur.getLogoTortue().getCouranteTortue().setColor(n);
+                tortueControleur.getLogoTortue().getCouranteTortue().setColor(n);
             }
         });
 

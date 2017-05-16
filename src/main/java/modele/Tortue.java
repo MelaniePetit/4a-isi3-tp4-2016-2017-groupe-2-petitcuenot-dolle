@@ -167,4 +167,16 @@ public class Tortue extends Observable{
         couleur = n;
         notifier();
     }
+
+    public int getVitesse() {
+        return vitesse;
+    }
+
+    public void setDir(int dir) {
+        this.dir = dir;
+    }
+
+    public void setVitesse(int vitesse) {
+        this.vitesse = vitesse;
+    }
 }

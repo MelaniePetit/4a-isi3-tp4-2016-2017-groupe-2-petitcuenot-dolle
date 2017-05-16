@@ -1,9 +1,7 @@
 package vue;
 
 import controleur.EnvironnementControleur;
-import controleur.LogoTortueControlableControleur;
-import controleur.LogoTortueControleur;
-import modele.Environnement;
+import controleur.TortueControleur;
 import modele.FeuilleDessin;
 import modele.Tortue;
 
@@ -22,11 +20,11 @@ public class FeuilleDessinVue extends JPanel implements Observer, MouseListener{
 
     protected ArrayList<TortueVue> tortues;
     protected FeuilleDessin dessin;             //ajouter controleur
-    protected LogoTortueControleur logoTortueControleur;
+    protected TortueControleur tortueControleur;
     protected EnvironnementControleur environnement;
 
-    public FeuilleDessinVue(FeuilleDessin feuille, LogoTortueControleur logoControleur, EnvironnementControleur environnementControleur) {
-        logoTortueControleur = logoControleur;
+    public FeuilleDessinVue(FeuilleDessin feuille, TortueControleur logoControleur, EnvironnementControleur environnementControleur) {
+        tortueControleur = logoControleur;
         environnement = environnementControleur;
         dessin = feuille;
         dessin.setEnvironnement(environnement.getEnvironnement());
@@ -51,7 +49,7 @@ public class FeuilleDessinVue extends JPanel implements Observer, MouseListener{
     }
 
     public void ajouterTortue(Tortue tortue) {
-        TortueVue tortueVue = new TortueVue(tortue, logoTortueControleur);
+        TortueVue tortueVue = new TortueVue(tortue, tortueControleur);
         tortue.addObserver(this);
         tortues.add(tortueVue);
         dessin.ajouterTortue(tortue);
@@ -90,7 +88,7 @@ public class FeuilleDessinVue extends JPanel implements Observer, MouseListener{
     public void mouseClicked(MouseEvent e) {
         for (TortueVue t: getTortues()) {
             if (t.getArrow().contains(e.getX(), e.getY())){
-                logoTortueControleur.getLogoTortue().setCouranteTortue(t.getTortue());
+                tortueControleur.getLogoTortue().setCouranteTortue(t.getTortue());
             }
         }
     }

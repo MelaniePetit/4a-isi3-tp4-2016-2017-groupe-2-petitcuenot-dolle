@@ -1,6 +1,6 @@
 package vue;
 
-import controleur.LogoTortueControleur;
+import controleur.TortueControleur;
 import modele.LogoTortue;
 
 import javax.swing.*;
@@ -9,23 +9,22 @@ import java.awt.*;
 /**
  * Created by Mel on 18/04/2017.
  */
-public class LogoTortueControlableVue extends MainVue {
+public class FenetreTortueControlableVue extends MainVue {
 
     private JTextField inputValue;
 
-    public LogoTortueControlableVue(LogoTortue logoTortue, LogoTortueControleur controleur) {
+    public FenetreTortueControlableVue(LogoTortue logoTortue, TortueControleur controleur) {
         super(logoTortue, controleur, 0 );
     }
 
     @Override
-    public void logoInit(){
-        super.logoInit();
+    public void fenetreInit(){
+        super.fenetreInit();
 
         initFormes();
 
         //ajouter première tortue
-
-        feuilleDessinVue.ajouterTortue(logoTortue.getCouranteTortue());
+        feuilleDessinVue.ajouterTortue(tortueControleur.getLogoTortue().getCouranteTortue());
 
     }
 
@@ -34,13 +33,13 @@ public class LogoTortueControlableVue extends MainVue {
         JPanel p2 = new JPanel(new GridLayout());
         JButton b20 = new JButton("Proc1");
         p2.add(b20);
-        b20.addActionListener(logoTortueControleur);
+        b20.addActionListener(tortueControleur);
         JButton b21 = new JButton("Proc2");
         p2.add(b21);
-        b21.addActionListener(logoTortueControleur);
+        b21.addActionListener(tortueControleur);
         JButton b22 = new JButton("Proc3");
         p2.add(b22);
-        b22.addActionListener(logoTortueControleur);
+        b22.addActionListener(tortueControleur);
 
         getContentPane().add(p2,"South");
 

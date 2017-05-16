@@ -1,6 +1,6 @@
 package vue;
 
-import controleur.LogoTortueControleur;
+import controleur.TortueControleur;
 import modele.LogoTortue;
 import modele.TortueAutonome;
 import modele.TortueIntelligente;
@@ -10,18 +10,18 @@ import javax.swing.*;
 /**
  * Created by Mel on 19/04/2017.
  */
-public class LogoTortueAutonomeVue extends MainVue {
+public class FenetreTortueAutonomeVue extends MainVue {
 
     private JTextField inputValue;
 
 
-    public LogoTortueAutonomeVue(LogoTortue logoTortue, LogoTortueControleur controleur, int i) {
+    public FenetreTortueAutonomeVue(LogoTortue logoTortue, TortueControleur controleur, int i) {
         super(logoTortue, controleur, i);
     }
 
     @Override
-    public void logoInit(){
-        super.logoInit();
+    public void fenetreInit(){
+        super.fenetreInit();
 
         if (typeTortue == 1){
             //ajouter des tortues autonomes de base
