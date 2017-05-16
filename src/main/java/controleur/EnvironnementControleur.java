@@ -56,7 +56,7 @@ public class EnvironnementControleur {
                     listObstacleVue.add(new RectangleObstacleVue(this));
                     break;
                 case 2 :
-                    environnement.getListeObstacle().add(new CercleObstacle(100,0,0));
+                    environnement.getListeObstacle().add(new CercleObstacle(100, r.nextInt(900), r.nextInt(700)));
                     listObstacleVue.add(new CercleObstacleVue(this));
                     break;
             }
@@ -67,8 +67,12 @@ public class EnvironnementControleur {
         return listObstacleVue;
     }
 
-    public Obstacle getObstacle(ObstacleVue vue){
+    public Obstacle getObstacleVue(ObstacleVue vue){
         int index = this.getListObstacleVue().indexOf(vue);
         return this.getEnvironnement().getListeObstacle().get(index);
+    }
+
+    public ArrayList<Obstacle> getObstaclesListe(){
+        return environnement.getListeObstacle();
     }
 }

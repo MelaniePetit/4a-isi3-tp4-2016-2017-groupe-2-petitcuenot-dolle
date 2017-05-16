@@ -5,12 +5,11 @@ import modele.LogoTortue;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
 
 /**
  * Created by Mel on 18/04/2017.
  */
-public class LogoTortueControlableVue extends LogoTortueVue {
+public class LogoTortueControlableVue extends MainVue {
 
     private JTextField inputValue;
 
@@ -26,7 +25,7 @@ public class LogoTortueControlableVue extends LogoTortueVue {
 
         //ajouter première tortue
 
-        feuilleDessin.ajouterTortue(logoTortue.getCouranteTortue());
+        feuilleDessinVue.ajouterTortue(logoTortue.getCouranteTortue());
 
     }
 

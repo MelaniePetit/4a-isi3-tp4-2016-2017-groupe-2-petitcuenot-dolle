@@ -31,7 +31,7 @@ public class LogoTortueAutonomeControleur extends LogoTortueControleur implement
             TortueAutonome tortue =  new TortueAutonome();
             tortue.setTeteCouleur(logoTortue.getCouranteTortue().getCouleur());
             tortue.setColor(logoTortue.getCouranteTortue().getCouleur());
-            logoTortueVue.getFeuilleDessinVue().ajouterTortue(tortue);
+            mainVue.getFeuilleDessinVue().ajouterTortue(tortue);
         }
         super.actionPerformed(e);
 

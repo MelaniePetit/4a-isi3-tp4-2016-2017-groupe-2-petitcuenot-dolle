@@ -41,7 +41,7 @@ public class LogoTortueControlableControleur extends LogoTortueControleur implem
             Tortue tortue =  new Tortue();
             tortue.setTeteCouleur(logoTortue.getCouranteTortue().getCouleur());
             tortue.setColor(logoTortue.getCouranteTortue().getCouleur());
-            logoTortueVue.getFeuilleDessinVue().ajouterTortue(tortue);
+            mainVue.getFeuilleDessinVue().ajouterTortue(tortue);
         }
         else if (c.equals("Baisser")) {
             System.out.println("command baisser");
@@ -51,7 +51,7 @@ public class LogoTortueControlableControleur extends LogoTortueControleur implem
 //            Tortue t = logoTortue.getCouranteTortue();
 //            logoTortue.setCouranteTortue(logoTortue.getDessin().getTortues().get(0));
 //            logoTortue.getDessin().supprimerTortue(t);
-//            logoTortueVue.getFeuilleDessinVue().supprimerTortue(t);
+//            mainVue.getFeuilleDessinVue().supprimerTortue(t);
 
         }
 

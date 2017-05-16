@@ -15,25 +15,23 @@ import java.util.Observer;
 /**
  * Created by Mel on 17/04/2017.
  */
-public abstract class LogoTortueVue extends JFrame implements Observer{
+public abstract class MainVue extends JFrame implements Observer{
 
-    protected LogoTortue logoTortue;
-    protected FeuilleDessinVue feuilleDessin;
+    protected FeuilleDessinVue feuilleDessinVue;
     protected LogoTortueControleur logoTortueControleur;
     protected int typeTortue;         //détermine si les tortues doivent etre intelligente ou simplement autonome
 
     public static final Dimension HGAP = new Dimension(5,1);
 
-    public LogoTortueVue(LogoTortue logoTortue, LogoTortueControleur controleur, int i){
+    public MainVue(LogoTortue logoTortue, LogoTortueControleur controleur, int i){
         super("Super Turtle");
 
         setResizable(false);
         typeTortue = i;
         logoTortueControleur = controleur;
 
-        this.logoTortue = logoTortue;
         logoTortue.addObserver(this);
-        feuilleDessin = new FeuilleDessinVue(logoTortue.getDessin(), logoTortueControleur, new EnvironnementControleur());
+        feuilleDessinVue = new FeuilleDessinVue(logoTortue.getDessin(), logoTortueControleur, new EnvironnementControleur());
 
         logoInit();
 
@@ -50,10 +48,10 @@ public abstract class LogoTortueVue extends JFrame implements Observer{
         initBouton();
 
         //Feuille Dessin
-        feuilleDessin.setBackground(Color.white);
-        feuilleDessin.setSize(new Dimension(1000,800));
-        feuilleDessin.setPreferredSize(new Dimension(1000,800));
-        getContentPane().add(feuilleDessin,"Center");
+        feuilleDessinVue.setBackground(Color.white);
+        feuilleDessinVue.setSize(new Dimension(1000,800));
+        feuilleDessinVue.setPreferredSize(new Dimension(1000,800));
+        getContentPane().add(feuilleDessinVue,"Center");
 
     }
 
@@ -164,6 +162,6 @@ public abstract class LogoTortueVue extends JFrame implements Observer{
     //Getters Setters
 
     public FeuilleDessinVue getFeuilleDessinVue() {
-        return feuilleDessin;
+        return feuilleDessinVue;
     }
 }

@@ -9,6 +9,7 @@ import java.util.Observable;
  */
 public class FeuilleDessin extends Observable {
     private ArrayList<Tortue> tortues;
+    private Environnement environnement = null;
 
     public FeuilleDessin() {
         tortues = new ArrayList<Tortue>();
@@ -37,12 +38,15 @@ public class FeuilleDessin extends Observable {
 
     public void faireAvancerTortuesAutonomes() {
         for (Tortue tortue : tortues) {
-            ((TortueAutonome) tortue).avancer(tortues);
+            ((TortueAutonome) tortue).avancer(tortues, environnement.getListeObstacle());
         }
     }
 
     //GETTERS SETTERS
     public ArrayList<Tortue> getTortues() {
         return tortues;
+    }
+    public void setEnvironnement(Environnement environnement) {
+        this.environnement = environnement;
     }
 }

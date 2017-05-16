@@ -3,6 +3,7 @@ package vue;
 import controleur.LogoTortueControleur;
 import modele.Segment;
 import modele.Tortue;
+import modele.TortueAutonome;
 import modele.TortueIntelligente;
 
 import javax.swing.*;
@@ -64,8 +65,13 @@ public class TortueVue {
         graph.setColor(tortue.getTeteCouleur());
         graph.fillPolygon(arrow);
 
+        //Dessine le cercle de vision
         graph.setColor(tortue.getTeteCouleur());
         graph.drawOval((tortue.getX() + p2.x)/2 - tortue.getRayon(), (tortue.getY() + p2.y)/2 - tortue.getRayon(), tortue.getRayon()*2, tortue.getRayon()*2);
+
+//        graph.setColor(Color.BLACK);
+//        graph.drawRect((new Point((int) Math.round(tortue.getX() + (size * r * Math.cos(theta))),
+//                (int) Math.round(tortue.getY() - ((TortueAutonome) tortue.getVitesse()/tortue.rp * r * Math.sin(theta))))), 1, 1);
     }
 
 

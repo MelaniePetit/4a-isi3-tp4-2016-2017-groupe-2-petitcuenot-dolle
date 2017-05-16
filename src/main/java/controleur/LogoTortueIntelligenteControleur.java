@@ -31,7 +31,7 @@ public class LogoTortueIntelligenteControleur extends LogoTortueControleur imple
             TortueIntelligente tortue =  new TortueIntelligente();
             tortue.setTeteCouleur(logoTortue.getCouranteTortue().getCouleur());
             tortue.setColor(logoTortue.getCouranteTortue().getCouleur());
-            logoTortueVue.getFeuilleDessinVue().ajouterTortue(tortue);
+            mainVue.getFeuilleDessinVue().ajouterTortue(tortue);
         }
     }
 }

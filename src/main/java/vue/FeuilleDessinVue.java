@@ -29,6 +29,7 @@ public class FeuilleDessinVue extends JPanel implements Observer, MouseListener{
         logoTortueControleur = logoControleur;
         environnement = environnementControleur;
         dessin = feuille;
+        dessin.setEnvironnement(environnement.getEnvironnement());
         tortues = new ArrayList<TortueVue>();
         dessin.addObserver(this);
         addMouseListener(this);

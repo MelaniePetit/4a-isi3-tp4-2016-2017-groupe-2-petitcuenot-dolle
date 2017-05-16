@@ -17,7 +17,7 @@ public class CercleObstacleVue extends ObstacleVue {
 
     @Override
     public void dessinerObctacle(Graphics graphics) {
-        Obstacle obstacle = controleur.getObstacle(this);
+        Obstacle obstacle = controleur.getObstacleVue(this);
         graphics.fillOval(obstacle.getX(),obstacle.getY(),obstacle.getTaille(),obstacle.getTaille());
     }
 }

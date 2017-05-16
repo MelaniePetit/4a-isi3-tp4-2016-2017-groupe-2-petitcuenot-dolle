@@ -1,5 +1,6 @@
 package modele.obstacle;
 
+
 /**
  * Created by Mel on 03/05/2017.
  */
@@ -14,7 +15,7 @@ public class RectangleObstacle extends Obstacle {
 
     @Override
     public boolean estDansObstacle(int x, int y) {
-        return (x >= this.x && x <= this.x + largeur) && (y >= this.y && y <= this.y + taille);
+        return (x >= this.x && x <= this.x + taille) && (y >= this.y && y <= this.y + largeur);
 
     }
 

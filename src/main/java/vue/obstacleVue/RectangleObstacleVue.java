@@ -1,7 +1,6 @@
 package vue.obstacleVue;
 
 import controleur.EnvironnementControleur;
-import modele.obstacle.Obstacle;
 import modele.obstacle.RectangleObstacle;
 
 import java.awt.*;
@@ -18,7 +17,7 @@ public class RectangleObstacleVue extends ObstacleVue {
 
     @Override
     public void dessinerObctacle(Graphics graphics) {
-        RectangleObstacle obstacle = (RectangleObstacle) controleur.getObstacle(this);
+        RectangleObstacle obstacle = (RectangleObstacle) controleur.getObstacleVue(this);
         graphics.fillRect(obstacle.getX(),obstacle.getY(),obstacle.getTaille(),obstacle.getLargeur());
     }
 }

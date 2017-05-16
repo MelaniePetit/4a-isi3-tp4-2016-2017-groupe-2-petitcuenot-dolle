@@ -1,5 +1,7 @@
 package modele;
 
+import modele.obstacle.Obstacle;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -21,12 +23,12 @@ public class TortueAutonome extends Tortue {
         y = r.nextInt(800);
         teteCouleur = decodeColor(r.nextInt(12));
         dir = r.nextInt(360)+1;
-        vitesse = r.nextInt(50);
+        vitesse = r.nextInt(30);
 
         notifier();
     }
 
-    public void avancer(ArrayList<Tortue> voisines){
+    public void avancer(ArrayList<Tortue> voisines, ArrayList<Obstacle> obstacles){
         avancer(this.vitesse);
 
         //Pour avoir un écran toroïdal
@@ -37,15 +39,5 @@ public class TortueAutonome extends Tortue {
         notifier();
 
     }
-
-    //GETTERS AND SETTERS
-    public int getVitesse() {
-        return vitesse;
-    }
-
-    public void setVitesse(int vitesse) {
-        this.vitesse = vitesse;
-    }
-
 
 }

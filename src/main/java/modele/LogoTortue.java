@@ -7,30 +7,25 @@ import java.util.Observable;
  */
 public class LogoTortue extends Observable {
 
-    protected Tortue couranteTortue;		//Tortue contrôlable
-    protected FeuilleDessin dessin;	        //Feuille de dessin model
-    protected int couranteCouleur;			//Couleur courante
-    protected boolean avance = false;               //tortues en mouvement
+    private Tortue couranteTortue;		//Tortue contrôlable
+    private FeuilleDessin dessin;	    //Feuille de dessin model
+    private boolean avance = false;     //tortues en mouvement
 
     public LogoTortue() {
         couranteTortue = new Tortue();
         dessin = new FeuilleDessin();
-        couranteCouleur = 0;
     }
 
     public void lancerTortues() {
-
         if(avance)
             return;
-
         avance = true;
-
         Thread t = new Thread(new Runnable() {
             public void run() {
                 while(avance) {
                     dessin.faireAvancerTortuesAutonomes();
                     try {
-                        Thread.sleep(100);
+                        Thread.sleep(60);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -41,19 +36,15 @@ public class LogoTortue extends Observable {
     }
 
     //Getters Setters
-
     public Tortue getCouranteTortue() {
         return couranteTortue;
     }
-
     public void setCouranteTortue(Tortue couranteTortue) {
         this.couranteTortue = couranteTortue;
     }
-
     public FeuilleDessin getDessin() {
         return dessin;
     }
-
     public void setAvance(boolean avance) {
         this.avance = avance;
     }

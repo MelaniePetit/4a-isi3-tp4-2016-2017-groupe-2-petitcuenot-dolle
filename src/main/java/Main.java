@@ -7,7 +7,7 @@ import controleur.LogoTortueIntelligenteControleur;
 import modele.LogoTortue;
 import vue.LogoTortueAutonomeVue;
 import vue.LogoTortueControlableVue;
-import vue.LogoTortueVue;
+import vue.MainVue;
 
 import javax.swing.*;
 
@@ -40,25 +40,25 @@ public class Main {
 					//Instanciation de l'application
 					LogoTortue logo = new LogoTortue();
 					LogoTortueControleur logoControleur;
-					LogoTortueVue logoVue;
+					MainVue logoVue;
 					if (rang == 0){
 						logoControleur = new LogoTortueControlableControleur(logo);
 						logoVue = new LogoTortueControlableVue(logo, (LogoTortueControlableControleur) logoControleur);
-						logoControleur.setLogoTortueVue(logoVue);
+						logoControleur.setMainVue(logoVue);
 						logoVue.setVisible(true);
 					}
 
 					else if (rang == 1){
 						logoControleur = new LogoTortueAutonomeControleur(logo);
 						logoVue = new LogoTortueAutonomeVue(logo, (LogoTortueAutonomeControleur) logoControleur, rang);
-						logoControleur.setLogoTortueVue(logoVue);
+						logoControleur.setMainVue(logoVue);
 						logoVue.setVisible(true);
 					}
 
 					else if (rang == 2){
 						logoControleur = new LogoTortueIntelligenteControleur(logo);
 						logoVue = new LogoTortueAutonomeVue(logo, (LogoTortueIntelligenteControleur) logoControleur, rang);
-						logoControleur.setLogoTortueVue(logoVue);
+						logoControleur.setMainVue(logoVue);
 						logoVue.setVisible(true);
 					}
 
