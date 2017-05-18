@@ -2,6 +2,7 @@ package modele.obstacle;
 
 
 /**
+ *
  * Created by Mel on 03/05/2017.
  */
 public class RectangleObstacle extends Obstacle {

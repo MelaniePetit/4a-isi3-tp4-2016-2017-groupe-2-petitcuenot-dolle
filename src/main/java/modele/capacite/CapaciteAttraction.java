@@ -32,7 +32,7 @@ public class CapaciteAttraction implements Capacite {
         return (int) Math.sqrt(Math.pow((double) voisine.getX() - (double) currentTortue.getX(), 2) + Math.pow((double) voisine.getY() - (double) currentTortue.getY(), 2));
     }
 
-    public synchronized void detecterVoisines(ArrayList<Tortue> toutesLesTortues){
+    public void detecterVoisines(ArrayList<Tortue> toutesLesTortues){
         List<Tortue> voisins = new ArrayList<>();
         for (Tortue autreTortue : toutesLesTortues) {
             if (this.equals(autreTortue)) {
@@ -46,7 +46,7 @@ public class CapaciteAttraction implements Capacite {
         this.voisins = voisins;
     }
 
-    public void attracter(){
+    public synchronized void attracter(){
         int distMin = Integer.MAX_VALUE;
         //Mettre une direction et une vitesse moyenne
         if (voisins.size() > 1) {
@@ -66,10 +66,6 @@ public class CapaciteAttraction implements Capacite {
             }
             directioGlobal /= voisins.size();
             vitesseGlobal /= voisins.size();
-
-//            if (distMin < 20) {
-//                vitesseGlobal = (int) (vitesseGlobal + 5 * Math.random());
-//            }
 
             currentTortue.setDir(directioGlobal);
             currentTortue.setVitesse(vitesseGlobal);

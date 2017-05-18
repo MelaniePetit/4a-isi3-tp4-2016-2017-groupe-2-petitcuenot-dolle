@@ -44,19 +44,19 @@ public class EnvironnementControleur {
     private void genererObstacles() {
         Random r = new Random();
 
-        for (int i = 1 ; i<10 ; i++){
-            int forme = r.nextInt(2);
+        for (int i = 1 ; i<5 ; i++){
+            int forme = r.nextInt(1);
             switch (forme){
                 case 0 :
-                    environnement.getListeObstacle().add(new CarreObstacle(100, r.nextInt(900),r.nextInt(700)));
+                    environnement.getListeObstacle().add(new CarreObstacle(200, r.nextInt(900),r.nextInt(700)));
                     listObstacleVue.add(new CarreObstacleVue(this));
                     break;
                 case 1 :
-                    environnement.getListeObstacle().add(new RectangleObstacle(100, r.nextInt(900), r.nextInt(700), 50));
+                    environnement.getListeObstacle().add(new RectangleObstacle(200, r.nextInt(900), r.nextInt(700), 100));
                     listObstacleVue.add(new RectangleObstacleVue(this));
                     break;
                 case 2 :
-                    environnement.getListeObstacle().add(new CercleObstacle(100, r.nextInt(900), r.nextInt(700)));
+                    environnement.getListeObstacle().add(new CercleObstacle(200, r.nextInt(900), r.nextInt(700)));
                     listObstacleVue.add(new CercleObstacleVue(this));
                     break;
             }

@@ -28,8 +28,8 @@ public class TortueIntelligente extends TortueAutonome {
         this.listCapacites = new ArrayList<>();
 
         listCapacites.add(new CapaciteAttraction(this));
+        listCapacites.add(new CapaciteObstacle(this,6));
         listCapacites.add(new CapaciteObstacle(this,2));
-        listCapacites.add(new CapaciteObstacle(this,1));
     }
 
     @Override
