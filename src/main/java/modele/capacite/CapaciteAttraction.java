@@ -1,6 +1,6 @@
 package modele.capacite;
 
-import modele.Environnement;
+import modele.environnement.Environment;
 import modele.Tortue;
 import modele.TortueIntelligente;
 
@@ -35,21 +35,22 @@ public class CapaciteAttraction implements Capacite {
     public void detecterVoisines(ArrayList<Tortue> toutesLesTortues){
         List<Tortue> voisins = new ArrayList<>();
         for (Tortue autreTortue : toutesLesTortues) {
-            if (this.equals(autreTortue)) {
+            if (currentTortue.equals(autreTortue)) {
                 continue;
             }
             if (estDansMaVision(autreTortue)) {
                 voisins.add(autreTortue);
             }
         }
-        voisins.add(currentTortue);
+        if (!voisins.contains(currentTortue))
+            voisins.add(currentTortue);
         this.voisins = voisins;
     }
 
     public synchronized void attracter(){
         int distMin = Integer.MAX_VALUE;
         //Mettre une direction et une vitesse moyenne
-        if (voisins.size() > 1) {
+        if (!voisins.isEmpty()) {
             int directioGlobal = 0;
             int vitesseGlobal = 0;
             int distTest = 0;
@@ -57,7 +58,7 @@ public class CapaciteAttraction implements Capacite {
                 directioGlobal += tortueASuivre.getDir();
                 vitesseGlobal += tortueASuivre.getVitesse();
 
-                if (this.equals(tortueASuivre)) continue;
+                if (currentTortue.equals(tortueASuivre)) continue;
                 distTest = this.distanceVoisine(tortueASuivre);
                 if (distTest < distMin) {
                     distMin = distTest;
@@ -77,8 +78,8 @@ public class CapaciteAttraction implements Capacite {
     }
 
     @Override
-    public void lancerCapacité(Environnement environnement) {
-        this.detecterVoisines(environnement.getListeTortue());
+    public void lancerCapacité(Environment environment) {
+        this.detecterVoisines(environment.getListeTortue());
         attracter();
     }
 }

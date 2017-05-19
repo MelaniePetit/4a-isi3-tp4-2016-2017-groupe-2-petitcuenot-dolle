@@ -1,6 +1,9 @@
 package controleur;
 
-import modele.Environnement;
+import modele.environnement.Environment;
+import modele.environnement.factory.AleatoireEnvironmentFactory;
+import modele.environnement.factory.BorderedEnvironmentFactory;
+import modele.environnement.factory.EnvironementFactory;
 import modele.obstacle.CarreObstacle;
 import modele.obstacle.CercleObstacle;
 import modele.obstacle.Obstacle;
@@ -20,20 +23,16 @@ import java.util.Random;
  */
 public class EnvironnementControleur {
 
-    private Environnement environnement;
+    private EnvironementFactory environementFactory;
+    private Environment environement;
     private EnvironnementVue environnementVue;
     private ArrayList<ObstacleVue> listObstacleVue;
 
     public EnvironnementControleur() {
-        this.environnement = new Environnement();
+        this.environementFactory = new BorderedEnvironmentFactory();
         this.environnementVue = new EnvironnementVue(this);
         listObstacleVue = new ArrayList<>();
         genererObstacles();
-
-    }
-
-    public Environnement getEnvironnement() {
-        return environnement;
     }
 
     public void dessinerObstacles(Graphics graphic){
@@ -42,24 +41,13 @@ public class EnvironnementControleur {
     }
 
     private void genererObstacles() {
-        Random r = new Random();
+        environement = environementFactory.buildEnvironment();
+    }
 
-        for (int i = 1 ; i<5 ; i++){
-            int forme = r.nextInt(1);
-            switch (forme){
-                case 0 :
-                    environnement.getListeObstacle().add(new CarreObstacle(200, r.nextInt(900),r.nextInt(700)));
-                    listObstacleVue.add(new CarreObstacleVue(this));
-                    break;
-                case 1 :
-                    environnement.getListeObstacle().add(new RectangleObstacle(200, r.nextInt(900), r.nextInt(700), 100));
-                    listObstacleVue.add(new RectangleObstacleVue(this));
-                    break;
-                case 2 :
-                    environnement.getListeObstacle().add(new CercleObstacle(200, r.nextInt(900), r.nextInt(700)));
-                    listObstacleVue.add(new CercleObstacleVue(this));
-                    break;
-            }
+    public void genererObstaclesVues(Graphics graphics) {
+        for(int i =0 ; i<environement.getListeObstacle().size() ; i++){
+            ObstacleControleur controleur = new ObstacleControleur(environement.getListeObstacle().get(i), environement.getListObstacleVues().get(i));
+            controleur.dessinerObstacle(graphics);
         }
     }
 
@@ -69,10 +57,15 @@ public class EnvironnementControleur {
 
     public Obstacle getObstacleVue(ObstacleVue vue){
         int index = this.getListObstacleVue().indexOf(vue);
-        return this.getEnvironnement().getListeObstacle().get(index);
+        return this.getEnvironement().getListeObstacle().get(index);
+    }
+
+    public Environment getEnvironement() {
+        return environement;
     }
 
     public ArrayList<Obstacle> getObstaclesListe(){
-        return environnement.getListeObstacle();
+        return environement.getListeObstacle();
     }
+
 }

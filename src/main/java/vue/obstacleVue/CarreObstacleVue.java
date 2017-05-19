@@ -10,13 +10,13 @@ import java.awt.*;
  */
 public class CarreObstacleVue extends ObstacleVue {
 
-    public CarreObstacleVue(EnvironnementControleur controleur) {
-        super(controleur);
-    }
+//    public CarreObstacleVue(EnvironnementControleur controleur) {
+//        super(controleur);
+//    }
 
     @Override
-    public void dessinerObctacle(Graphics graphics) {
-        Obstacle obstacle = controleur.getObstacleVue(this);
+    public void dessinerObctacle(Graphics graphics, Obstacle obstacle) {
+//        Obstacle obstacle = controleur.getObstacleVue(this);
         graphics.fillRect(obstacle.getX(),obstacle.getY(),obstacle.getTaille(),obstacle.getTaille());
     }
 }

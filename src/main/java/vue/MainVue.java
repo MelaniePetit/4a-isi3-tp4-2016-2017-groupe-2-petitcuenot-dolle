@@ -49,8 +49,8 @@ public abstract class MainVue extends JFrame implements Observer{
 
         //Feuille Dessin
         feuilleDessinVue.setBackground(Color.white);
-        feuilleDessinVue.setSize(new Dimension(1000,800));
-        feuilleDessinVue.setPreferredSize(new Dimension(1000,800));
+        feuilleDessinVue.setSize(new Dimension(900,700));
+        feuilleDessinVue.setPreferredSize(new Dimension(900,700));
         getContentPane().add(feuilleDessinVue,"Center");
 
     }

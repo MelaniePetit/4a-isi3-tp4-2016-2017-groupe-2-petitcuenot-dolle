@@ -4,9 +4,8 @@ package modele;
 import modele.capacite.Capacite;
 import modele.capacite.CapaciteAttraction;
 import modele.capacite.CapaciteObstacle;
-import modele.obstacle.Obstacle;
+import modele.environnement.Environment;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -28,16 +27,16 @@ public class TortueIntelligente extends TortueAutonome {
         this.listCapacites = new ArrayList<>();
 
         listCapacites.add(new CapaciteAttraction(this));
-        listCapacites.add(new CapaciteObstacle(this,6));
-        listCapacites.add(new CapaciteObstacle(this,2));
+        listCapacites.add(new CapaciteObstacle(this,6, 15,20));
+        listCapacites.add(new CapaciteObstacle(this,2,35,20));
     }
 
     @Override
-    public void avancer(ArrayList<Tortue> toutesLesTortues, Environnement environnement) {
+    public void avancer(ArrayList<Tortue> toutesLesTortues, Environment environment) {
         for (Capacite c : listCapacites) {
-            c.lancerCapacité(environnement);
+            c.lancerCapacité(environment);
         }
-        super.avancer(toutesLesTortues, environnement);
+        super.avancer(toutesLesTortues, environment);
     }
 
     @Override
@@ -50,7 +49,7 @@ public class TortueIntelligente extends TortueAutonome {
         y = r.nextInt(800);
         teteCouleur = decodeColor(r.nextInt(12));
         dir = r.nextInt(360) + 1;
-        vitesse = r.nextInt(30);
+        vitesse = 10;
 
         notifier();
     }

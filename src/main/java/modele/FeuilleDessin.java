@@ -1,5 +1,7 @@
 package modele;
 
+import modele.environnement.Environment;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Observable;
@@ -9,7 +11,7 @@ import java.util.Observable;
  */
 public class FeuilleDessin extends Observable {
     private ArrayList<Tortue> tortues;
-    private Environnement environnement = null;
+    private Environment environment = null;
 
     public FeuilleDessin() {
         tortues = new ArrayList<Tortue>();
@@ -17,7 +19,7 @@ public class FeuilleDessin extends Observable {
 
     public void ajouterTortue(Tortue t) {
         tortues.add(t);
-        environnement.getListeTortue().add(t);
+        environment.getListeTortue().add(t);
     }
 
     public void supprimerTortue(){
@@ -39,7 +41,7 @@ public class FeuilleDessin extends Observable {
 
     public void faireAvancerTortuesAutonomes() {
         for (Tortue tortue : tortues) {
-            ((TortueAutonome) tortue).avancer(tortues, environnement);
+            ((TortueAutonome) tortue).avancer(tortues, environment);
         }
     }
 
@@ -47,7 +49,7 @@ public class FeuilleDessin extends Observable {
     public ArrayList<Tortue> getTortues() {
         return tortues;
     }
-    public void setEnvironnement(Environnement environnement) {
-        this.environnement = environnement;
+    public void setEnvironment(Environment environment) {
+        this.environment = environment;
     }
 }

@@ -1,6 +1,8 @@
 package modele.obstacle;
 
 
+import vue.obstacleVue.RectangleObstacleVue;
+
 /**
  *
  * Created by Mel on 03/05/2017.
@@ -13,6 +15,7 @@ public class RectangleObstacle extends Obstacle {
         super(longueur, x, y);
         this.largeur = largeur;
     }
+
 
     @Override
     public boolean estDansObstacle(int x, int y) {

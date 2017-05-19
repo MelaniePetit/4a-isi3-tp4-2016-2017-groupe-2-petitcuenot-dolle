@@ -11,13 +11,12 @@ import java.awt.*;
  */
 public class CercleObstacleVue extends ObstacleVue {
 
-    public CercleObstacleVue(EnvironnementControleur controleur) {
-        super(controleur);
-    }
+//    public CercleObstacleVue(EnvironnementControleur controleur) {
+//        super(controleur);
+//    }
 
     @Override
-    public void dessinerObctacle(Graphics graphics) {
-        Obstacle obstacle = controleur.getObstacleVue(this);
+    public void dessinerObctacle(Graphics graphics, Obstacle obstacle) {
         graphics.fillOval(obstacle.getX(),obstacle.getY(),obstacle.getTaille(),obstacle.getTaille());
     }
 }

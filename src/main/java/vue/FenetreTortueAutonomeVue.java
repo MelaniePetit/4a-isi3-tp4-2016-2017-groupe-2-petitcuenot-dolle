@@ -33,7 +33,7 @@ public class FenetreTortueAutonomeVue extends MainVue {
         }
         else{
             //ajouter des tortues intelligente
-            for (int i = 0; i < 100 ; i++){
+            for (int i = 0; i < 500 ; i++){
                 TortueIntelligente t = new TortueIntelligente();
                 feuilleDessinVue.ajouterTortue(t);
 

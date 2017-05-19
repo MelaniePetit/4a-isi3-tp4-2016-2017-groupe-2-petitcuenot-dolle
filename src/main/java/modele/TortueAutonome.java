@@ -1,6 +1,6 @@
 package modele;
 
-import modele.obstacle.Obstacle;
+import modele.environnement.Environment;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -28,7 +28,7 @@ public class TortueAutonome extends Tortue {
         notifier();
     }
 
-    public void avancer(ArrayList<Tortue> voisines, Environnement environnement){
+    public void avancer(ArrayList<Tortue> voisines, Environment environment){
         avancer(this.vitesse);
 
         //Pour avoir un écran toroïdal

@@ -71,7 +71,7 @@ On souhaite maintenant au lancement de l’application, proposer le choix de lan
  * soit une fenêtre avec plusieurs tortues contrôlées avec les boutons de l’IHM (fait
 dans la section précédente)
  * soit une fenêtre avec un ensemble de tortues qui se déplacent aléatoirement
-(direction et vitesses aléatoires), dans un environnement toroïdal.
+(direction et vitesses aléatoires), dans un environment toroïdal.
 
 #### Question 5
 

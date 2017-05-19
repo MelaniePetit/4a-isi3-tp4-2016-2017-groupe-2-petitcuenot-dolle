@@ -1,6 +1,7 @@
 package vue.obstacleVue;
 
 import controleur.EnvironnementControleur;
+import modele.obstacle.Obstacle;
 
 import java.awt.*;
 
@@ -9,11 +10,11 @@ import java.awt.*;
  */
 public abstract class ObstacleVue {
 
-    EnvironnementControleur controleur;
+//    EnvironnementControleur controleur;
 
-    public ObstacleVue(EnvironnementControleur controleur) {
-        this.controleur = controleur;
-    }
+//    public ObstacleVue(EnvironnementControleur controleur) {
+//        this.controleur = controleur;
+//    }
 
-    public abstract void dessinerObctacle(Graphics graphics);
+    public abstract void dessinerObctacle(Graphics graphics, Obstacle obstacle);
 }

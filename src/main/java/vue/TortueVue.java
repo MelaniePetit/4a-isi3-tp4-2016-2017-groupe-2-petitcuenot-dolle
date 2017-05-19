@@ -64,29 +64,83 @@ public class TortueVue {
 //        graph.setColor(tortue.getTeteCouleur());
 //        graph.drawOval((tortue.getX() + p2.x)/2 - tortue.getRayon(), (tortue.getY() + p2.y)/2 - tortue.getRayon(), tortue.getRayon()*2, tortue.getRayon()*2);
 
-
-        graph.setColor(Color.BLACK);
-        graph.fillRect(
-                (int)Math.round(tortue.getX() + (6 * r * Math.cos(theta))),
-                (int)Math.round(tortue.getY() - (6 * r * Math.sin(theta))),
-                2,
-                2
-        );
-//        double theta2 = Tortue.ratioDegRad*(-tortue.getDir()+10);
-//        double theta3 = Tortue.ratioDegRad*(-tortue.getDir()-10);
+//
+//        graph.setColor(Color.BLACK);
+//        graph.fillRect(
+//                (int)Math.round(tortue.getX() + (5 * r * Math.cos(theta))),
+//                (int)Math.round(tortue.getY() - (5 * r * Math.sin(theta))),
+//                2,
+//                2
+//        );
+////        graph.fillRect(
+////                (int)Math.round(tortue.getX() + (3 * r * Math.cos(theta))),
+////                (int)Math.round(tortue.getY() - (3 * r * Math.sin(theta))),
+////                2,
+////                2
+////        );
+//        graph.fillRect(
+//                (int)Math.round(tortue.getX() + (2 * r * Math.cos(theta))),
+//                (int)Math.round(tortue.getY() - (2 * r * Math.sin(theta))),
+//                2,
+//                2
+//        );
+////        graph.fillRect(
+////                (int)Math.round(tortue.getX() + (1 * r * Math.cos(theta))),
+////                (int)Math.round(tortue.getY() - (1 * r * Math.sin(theta))),
+////                2,
+////                2
+////        );
+//        double theta2 = Tortue.ratioDegRad*(-tortue.getDir()+15);
+//        double theta3 = Tortue.ratioDegRad*(-tortue.getDir()-15);
 //
 //        graph.fillRect(
-//                (int)Math.round(tortue.getX() + (6 * r * Math.cos(theta2))),
-//                (int)Math.round(tortue.getY() - (6 * r * Math.sin(theta2))),
+//                (int)Math.round(tortue.getX() + (5 * r * Math.cos(theta2))),
+//                (int)Math.round(tortue.getY() - (5 * r * Math.sin(theta2))),
 //                2,
 //                2
 //        );
 //        graph.fillRect(
-//                (int)Math.round(tortue.getX() + (6 * r * Math.cos(theta3))),
-//                (int)Math.round(tortue.getY() - (6 * r * Math.sin(theta3))),
+//                (int)Math.round(tortue.getX() + (5 * r * Math.cos(theta3))),
+//                (int)Math.round(tortue.getY() - (5 * r * Math.sin(theta3))),
 //                2,
 //                2
 //        );
+////        graph.fillRect(
+////                (int)Math.round(tortue.getX() + (3 * r * Math.cos(theta2))),
+////                (int)Math.round(tortue.getY() - (3 * r * Math.sin(theta2))),
+////                2,
+////                2
+////        );
+////        graph.fillRect(
+////                (int)Math.round(tortue.getX() + (3 * r * Math.cos(theta3))),
+////                (int)Math.round(tortue.getY() - (3 * r * Math.sin(theta3))),
+////                2,
+////                2
+////        );
+//        graph.fillRect(
+//                (int)Math.round(tortue.getX() + (2 * r * Math.cos(theta2))),
+//                (int)Math.round(tortue.getY() - (2 * r * Math.sin(theta2))),
+//                2,
+//                2
+//        );
+//        graph.fillRect(
+//                (int)Math.round(tortue.getX() + (2 * r * Math.cos(theta3))),
+//                (int)Math.round(tortue.getY() - (2 * r * Math.sin(theta3))),
+//                2,
+//                2
+//        );
+////        graph.fillRect(
+////                (int)Math.round(tortue.getX() + (1 * r * Math.cos(theta2))),
+////                (int)Math.round(tortue.getY() - (1 * r * Math.sin(theta2))),
+////                2,
+////                2
+////        );
+////        graph.fillRect(
+////                (int)Math.round(tortue.getX() + (1 * r * Math.cos(theta3))),
+////                (int)Math.round(tortue.getY() - (1 * r * Math.sin(theta3))),
+////                2,
+////                2
+////        );
     }
 
 
