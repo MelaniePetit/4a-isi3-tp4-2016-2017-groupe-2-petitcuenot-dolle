@@ -2,17 +2,24 @@ package controleur;
 
 import modele.LogoTortue;
 import modele.TortueIntelligente;
+import vue.capaciteVue.CapaciteVue;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Mel on 24/04/2017.
  */
 public class TortueIntelligenteControleur extends TortueControleur implements ActionListener {
-        
+
+    private List<CapaciteVue> capaciteVueList;
+    private TortueIntelligente tortue;
     public TortueIntelligenteControleur(LogoTortue logo) {
         super(logo);
+        capaciteVueList = new ArrayList<>();
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -28,10 +35,17 @@ public class TortueIntelligenteControleur extends TortueControleur implements Ac
         }
         else if (c.equals("Ajout")){
             System.out.println("ajout tortue");
-            TortueIntelligente tortue =  new TortueIntelligente();
+            tortue = new TortueIntelligente();
             tortue.setTeteCouleur(logoTortue.getCouranteTortue().getCouleur());
             tortue.setColor(logoTortue.getCouranteTortue().getCouleur());
-            mainVue.getFeuilleDessinVue().ajouterTortue(tortue);
+            mainVue.getFeuilleDessinVue().ajouterTortueIntelligente(tortue);
+        }
+    }
+
+    public void genererCapaciteVues(Graphics graphics, TortueIntelligente tortueIntelligente) {
+        for (int i = 0; i < tortueIntelligente.getListCapacites().size(); i++) {
+            CapaciteControleur controleur = new CapaciteControleur(tortueIntelligente.getListCapacites().get(i), tortueIntelligente.getListCapacitesVues().get(i));
+            controleur.dessinerCapacite(graphics);
         }
     }
 }

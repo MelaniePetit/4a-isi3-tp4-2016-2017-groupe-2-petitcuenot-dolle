@@ -82,4 +82,8 @@ public class CapaciteAttraction implements Capacite {
         this.detecterVoisines(environment.getListeTortue());
         attracter();
     }
+
+    public TortueIntelligente getCurrentTortue() {
+        return currentTortue;
+    }
 }

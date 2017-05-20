@@ -5,8 +5,12 @@ import modele.capacite.Capacite;
 import modele.capacite.CapaciteAttraction;
 import modele.capacite.CapaciteObstacle;
 import modele.environnement.Environment;
+import vue.capaciteVue.CapaciteAttractionVue;
+import vue.capaciteVue.CapaciteObstacleVue;
+import vue.capaciteVue.CapaciteVue;
 
 import java.util.ArrayList;
+import java.util.Observer;
 import java.util.Random;
 
 /**
@@ -20,15 +24,20 @@ public class TortueIntelligente extends TortueAutonome {
     private int distMin;
 
     private ArrayList<Capacite> listCapacites;
+    private ArrayList<CapaciteVue> listCapacitesVues;
 
     public TortueIntelligente() {
         super();
         rayon = 50;
         this.listCapacites = new ArrayList<>();
+        this.listCapacitesVues = new ArrayList<>();
 
-        listCapacites.add(new CapaciteAttraction(this));
-        listCapacites.add(new CapaciteObstacle(this,6, 15,20));
-        listCapacites.add(new CapaciteObstacle(this,2,35,20));
+        add(new CapaciteAttraction(this),new CapaciteAttractionVue());
+//        add(new CapaciteObstacle(this,4, 20,6),new CapaciteObstacleVue());
+//        add(new CapaciteObstacle(this,6, 5,10),new CapaciteObstacleVue());
+        add(new CapaciteObstacle(this,3,20,5),new CapaciteObstacleVue());
+        add(new CapaciteObstacle(this,1,190,5),new CapaciteObstacleVue());
+
     }
 
     @Override
@@ -52,6 +61,19 @@ public class TortueIntelligente extends TortueAutonome {
         vitesse = 10;
 
         notifier();
+    }
+
+    public ArrayList<Capacite> getListCapacites() {
+        return listCapacites;
+    }
+
+    public ArrayList<CapaciteVue> getListCapacitesVues() {
+        return listCapacitesVues;
+    }
+
+    public void add(Capacite capacite, CapaciteVue vue){
+        listCapacites.add(capacite);
+        listCapacitesVues.add(vue);
     }
 }
 

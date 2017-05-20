@@ -2,8 +2,10 @@ package vue;
 
 import controleur.EnvironnementControleur;
 import controleur.TortueControleur;
+import controleur.TortueIntelligenteControleur;
 import modele.FeuilleDessin;
 import modele.Tortue;
+import modele.TortueIntelligente;
 
 import javax.swing.*;
 import java.awt.*;
@@ -50,6 +52,15 @@ public class FeuilleDessinVue extends JPanel implements Observer, MouseListener{
 
     public void ajouterTortue(Tortue tortue) {
         TortueVue tortueVue = new TortueVue(tortue, tortueControleur);
+        tortue.addObserver(this);
+        tortues.add(tortueVue);
+        dessin.ajouterTortue(tortue);
+        repaint();
+    }
+
+    public void ajouterTortueIntelligente(TortueIntelligente tortue) {
+        TortueIntelligenteControleur controleur = new TortueIntelligenteControleur(tortueControleur.getLogoTortue());
+        TortueIntelligenteVue tortueVue = new TortueIntelligenteVue(tortue, controleur);
         tortue.addObserver(this);
         tortues.add(tortueVue);
         dessin.ajouterTortue(tortue);

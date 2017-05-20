@@ -17,9 +17,6 @@ public class EnvironnementVue {
     }
 
     public void dessinerEnvironnement(Graphics graphics){
-//        for(ObstacleVue obstacleVue : environnementControleur.getListObstacleVue()){
-//            obstacleVue.dessinerObctacle(graphics,environnementControleur.);
-//        }
         environnementControleur.genererObstaclesVues(graphics);
     }
 }

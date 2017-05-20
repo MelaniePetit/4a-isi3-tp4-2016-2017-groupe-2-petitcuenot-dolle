@@ -72,4 +72,29 @@ public class CapaciteObstacle implements Capacite{
         moustacheDroite = this.moustacheDroiteObstacle(size);
         moustacheGauche = this.moustacheGaucheObstacle(size);
     }
+
+
+    public Point getMoustacheDroite() {
+        return moustacheDroite;
+    }
+
+    public Point getMoustacheGauche() {
+        return moustacheGauche;
+    }
+
+    public TortueIntelligente getCurrentTortue() {
+        return currentTortue;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int getAngle() {
+        return angle;
+    }
+
+    public int getEcart() {
+        return ecart;
+    }
 }
