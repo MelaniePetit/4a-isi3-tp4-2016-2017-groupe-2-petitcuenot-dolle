@@ -23,7 +23,7 @@ public class Tortue extends Observable{
     protected int x, y;
     protected int dir;
     protected int vitesse;
-    protected int rayon;
+//    protected int rayon;
 
 
 
@@ -152,9 +152,9 @@ public class Tortue extends Observable{
     public Color getTeteCouleur() {
         return teteCouleur;
     }
-    public int getRayon() {
-        return rayon;
-    }
+//    public int getRayon() {
+//        return rayon;
+//    }
     public void setPosition(int newX, int newY) {
         x = newX;
         y = newY;

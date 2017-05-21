@@ -3,6 +3,7 @@ package modele;
 
 import modele.capacite.Capacite;
 import modele.capacite.CapaciteAttraction;
+import modele.capacite.CapaciteCouleurAttraction;
 import modele.capacite.CapaciteObstacle;
 import modele.environnement.Environment;
 import vue.capaciteVue.CapaciteAttractionVue;
@@ -28,14 +29,12 @@ public class TortueIntelligente extends TortueAutonome {
 
     public TortueIntelligente() {
         super();
-        rayon = 50;
+//        rayon = 50;
         this.listCapacites = new ArrayList<>();
         this.listCapacitesVues = new ArrayList<>();
 
-        add(new CapaciteAttraction(this),new CapaciteAttractionVue());
-//        add(new CapaciteObstacle(this,4, 20,6),new CapaciteObstacleVue());
-//        add(new CapaciteObstacle(this,6, 5,10),new CapaciteObstacleVue());
-        add(new CapaciteObstacle(this,3,20,5),new CapaciteObstacleVue());
+        add(new CapaciteCouleurAttraction(this, 30),new CapaciteAttractionVue());
+        add(new CapaciteObstacle(this,4,20,9),new CapaciteObstacleVue());
         add(new CapaciteObstacle(this,1,190,5),new CapaciteObstacleVue());
 
     }

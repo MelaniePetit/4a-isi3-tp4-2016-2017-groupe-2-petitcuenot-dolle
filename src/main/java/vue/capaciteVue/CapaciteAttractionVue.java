@@ -26,7 +26,7 @@ public class CapaciteAttractionVue extends CapaciteVue {
         );
 
         graphics.setColor(tortue.getTeteCouleur());
-        graphics.drawOval((tortue.getX() + p2.x)/2 - tortue.getRayon(), (tortue.getY() + p2.y)/2 - tortue.getRayon(), tortue.getRayon()*2, tortue.getRayon()*2);
+        graphics.drawOval((tortue.getX() + p2.x)/2 - capaciteAttraction.getRayon(), (tortue.getY() + p2.y)/2 - capaciteAttraction.getRayon(), capaciteAttraction.getRayon()*2, capaciteAttraction.getRayon()*2);
 
     }
 }

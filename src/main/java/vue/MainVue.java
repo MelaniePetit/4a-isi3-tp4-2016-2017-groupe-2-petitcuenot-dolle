@@ -17,7 +17,7 @@ import java.util.Observer;
  */
 public abstract class MainVue extends JFrame implements Observer{
 
-    protected FeuilleDessinVue feuilleDessinVue;
+    FeuilleDessinVue feuilleDessinVue;
     protected TortueControleur tortueControleur;
     protected int typeTortue;         //détermine si les tortues doivent etre intelligente ou simplement autonome
 
@@ -164,4 +164,5 @@ public abstract class MainVue extends JFrame implements Observer{
     public FeuilleDessinVue getFeuilleDessinVue() {
         return feuilleDessinVue;
     }
+
 }

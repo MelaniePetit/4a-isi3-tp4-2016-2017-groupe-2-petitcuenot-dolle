@@ -6,6 +6,7 @@ import controleur.TortueIntelligenteControleur;
 import modele.FeuilleDessin;
 import modele.Tortue;
 import modele.TortueIntelligente;
+import modele.obstacle.Obstacle;
 
 import javax.swing.*;
 import java.awt.*;
@@ -118,5 +119,9 @@ public class FeuilleDessinVue extends JPanel implements Observer, MouseListener{
 
     public void mouseExited(MouseEvent e) {
 
+    }
+
+    public EnvironnementControleur getEnvironnement() {
+        return environnement;
     }
 }

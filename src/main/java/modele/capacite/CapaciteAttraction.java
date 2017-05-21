@@ -14,18 +14,17 @@ public class CapaciteAttraction implements Capacite {
     TortueIntelligente currentTortue;
     List<Tortue> voisins;
     ArrayList<Tortue> toutesLesTortues;
+    int rayon;
 
-    public CapaciteAttraction(TortueIntelligente currentTortue) {
+    public CapaciteAttraction(TortueIntelligente currentTortue, int rayon) {
         this.currentTortue = currentTortue;
         this.voisins = new ArrayList<>();
+        this.rayon = rayon;
     }
 
     public boolean estDansMaVision(Tortue voisine) {
         int dist = distanceVoisine(voisine);
-        if (dist < currentTortue.getRayon()) {
-            return true;
-        } else
-            return false;
+        return dist < rayon;
     }
 
     public int distanceVoisine(Tortue voisine) {
@@ -65,11 +64,15 @@ public class CapaciteAttraction implements Capacite {
                 }
 
             }
+
             directioGlobal /= voisins.size();
             vitesseGlobal /= voisins.size();
 
-            currentTortue.setDir(directioGlobal);
-            currentTortue.setVitesse(vitesseGlobal);
+            for (Tortue t : voisins) {
+                t.setDir(directioGlobal);
+                t.setVitesse(vitesseGlobal);
+            }
+
         }
     }
 
@@ -86,4 +89,9 @@ public class CapaciteAttraction implements Capacite {
     public TortueIntelligente getCurrentTortue() {
         return currentTortue;
     }
+
+    public int getRayon() {
+        return rayon;
+    }
+
 }

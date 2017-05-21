@@ -4,6 +4,7 @@ import controleur.TortueControleur;
 import modele.LogoTortue;
 import modele.TortueAutonome;
 import modele.TortueIntelligente;
+import modele.obstacle.Obstacle;
 
 import javax.swing.*;
 
@@ -32,9 +33,21 @@ public class FenetreTortueAutonomeVue extends MainVue {
         }
         else{
             //ajouter des tortues intelligente
-            for (int i = 0; i < 20 ; i++){
+            for (int i = 0; i < 500 ; i++){
+                boolean create = true;
                 TortueIntelligente t = new TortueIntelligente();
-                feuilleDessinVue.ajouterTortueIntelligente(t);
+
+                for(Obstacle o : this.getFeuilleDessinVue().getEnvironnement().getObstaclesListe()){
+                    if(o.estDansObstacle(t.getX(),t.getY())){
+                        create = false;
+                        break;
+                    }
+                }
+
+                if (create)
+                    feuilleDessinVue.ajouterTortueIntelligente(t);
+                else
+                    i--;
             }
         }
 

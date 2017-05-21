@@ -14,7 +14,6 @@ import java.util.Random;
  * Created by jeremy on 20/05/2017.
  */
 public class MazeEnvironement extends Environment{
-    private ArrayList<CarreObstacle> murs;
     private int width=800;
     private int height=600;
 

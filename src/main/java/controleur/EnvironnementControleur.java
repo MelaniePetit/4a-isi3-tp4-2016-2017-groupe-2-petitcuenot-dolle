@@ -1,10 +1,8 @@
 package controleur;
 
 import modele.environnement.Environment;
-import modele.environnement.factory.AleatoireEnvironmentFactory;
-import modele.environnement.factory.BorderedEnvironmentFactory;
-import modele.environnement.factory.EnvironementFactory;
-import modele.environnement.factory.MazeEnvironementFactory;
+import modele.environnement.QuadriageEnironement;
+import modele.environnement.factory.*;
 import modele.obstacle.CarreObstacle;
 import modele.obstacle.CercleObstacle;
 import modele.obstacle.Obstacle;
@@ -30,7 +28,7 @@ public class EnvironnementControleur {
     private ArrayList<ObstacleVue> listObstacleVue;
 
     public EnvironnementControleur() {
-        this.environementFactory = new MazeEnvironementFactory();
+        this.environementFactory = new AleatoireEnvironmentFactory();
         this.environnementVue = new EnvironnementVue(this);
         listObstacleVue = new ArrayList<>();
         genererObstacles();
