@@ -9,19 +9,19 @@ import java.util.ArrayList;
 /**
  * Created by Mel on 03/05/2017.
  */
-public abstract class Environment {
+public class Environment {
 
     private ArrayList<Obstacle> listeObstacle;
     private ArrayList<ObstacleVue> listObstacleVues;
     private ArrayList<Tortue> listeTortue;
+    private int width=800;
+    private int height=600;
 
     public Environment() {
         this.listeObstacle = new ArrayList<>();
         this.listeTortue = new ArrayList<>();
         this.listObstacleVues = new ArrayList<>();
     }
-
-    public abstract Environment buildEnvironment();
 
     public ArrayList<ObstacleVue> getListObstacleVues() {
         return listObstacleVues;
@@ -33,5 +33,13 @@ public abstract class Environment {
 
     public ArrayList<Tortue> getListeTortue() {
         return listeTortue;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 }
