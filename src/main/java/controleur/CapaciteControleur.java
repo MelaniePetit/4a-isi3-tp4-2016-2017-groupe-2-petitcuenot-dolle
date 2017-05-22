@@ -17,6 +17,10 @@ public class CapaciteControleur {
         this.capaciteVue = capaciteVue;
     }
 
+    public CapaciteControleur(Capacite capacite) {
+        this.capacite = capacite;
+    }
+
     public void dessinerCapacite(Graphics graphics){
         capaciteVue.dessinerCapacite(graphics, capacite);
     }

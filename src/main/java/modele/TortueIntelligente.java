@@ -1,15 +1,14 @@
 package modele;
 
 
-import modele.capacite.Capacite;
-import modele.capacite.CapaciteAttraction;
-import modele.capacite.CapaciteCouleurAttraction;
-import modele.capacite.CapaciteObstacle;
+import modele.capacite.*;
 import modele.environnement.Environment;
 import vue.capaciteVue.CapaciteAttractionVue;
+import vue.capaciteVue.CapaciteObjectifVue;
 import vue.capaciteVue.CapaciteObstacleVue;
 import vue.capaciteVue.CapaciteVue;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Observer;
 import java.util.Random;
@@ -32,10 +31,13 @@ public class TortueIntelligente extends TortueAutonome {
 //        rayon = 50;
         this.listCapacites = new ArrayList<>();
         this.listCapacitesVues = new ArrayList<>();
+//
+//        add(new CapaciteCouleurAttraction(this, 30),new CapaciteAttractionVue());
+        add(new CapaciteObjectif(this, new Point(400,400)), new CapaciteObjectifVue());
 
-        add(new CapaciteCouleurAttraction(this, 30),new CapaciteAttractionVue());
-        add(new CapaciteObstacle(this,4,20,9),new CapaciteObstacleVue());
-        add(new CapaciteObstacle(this,1,190,5),new CapaciteObstacleVue());
+        add(new CapaciteObstacle(this,6,20,15),new CapaciteObstacleVue());
+        add(new CapaciteObstacle(this,3,45,10),new CapaciteObstacleVue());
+        add(new CapaciteObstacle(this,1,90,5),new CapaciteObstacleVue());
 
     }
 

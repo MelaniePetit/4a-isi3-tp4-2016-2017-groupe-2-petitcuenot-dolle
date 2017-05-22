@@ -41,6 +41,7 @@ public class EnvironnementControleur {
             ObstacleControleur controleur = new ObstacleControleur(environement.getListeObstacle().get(i), environement.getListObstacleVues().get(i));
             controleur.dessinerObstacle(graphics);
         }
+
     }
 
     public ArrayList<ObstacleVue> getListObstacleVue() {
