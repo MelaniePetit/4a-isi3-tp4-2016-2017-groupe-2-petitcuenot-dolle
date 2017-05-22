@@ -1,6 +1,7 @@
 package modele.capacite;
 
 import modele.Tortue;
+import modele.TortueIntelligente;
 import modele.environnement.Environment;
 
 import java.awt.*;
@@ -9,10 +10,10 @@ import java.awt.*;
  * Created by Mel on 16/05/2017.
  */
 public class CapaciteObjectif implements Capacite {
-    private Tortue tortue;
+    private TortueIntelligente tortue;
     private Point pointObjectif;
 
-    public CapaciteObjectif(Tortue tortue, Point pointObjectif) {
+    public CapaciteObjectif(TortueIntelligente tortue, Point pointObjectif) {
         this.tortue = tortue;
         this.pointObjectif = pointObjectif;
     }
@@ -40,5 +41,13 @@ public class CapaciteObjectif implements Capacite {
     @Override
     public void lancerCapacité(Environment environment) {
         this.suivre();
+    }
+
+    public TortueIntelligente getTortue() {
+        return tortue;
+    }
+
+    public Point getPointObjectif() {
+        return pointObjectif;
     }
 }

@@ -9,6 +9,7 @@ import vue.obstacleVue.CercleObstacleVue;
 import java.util.Random;
 
 /**
+ *
  * Created by jeremy on 20/05/2017.
  */
 public class MazeEnvironementFactory extends EnvironementFactory {
