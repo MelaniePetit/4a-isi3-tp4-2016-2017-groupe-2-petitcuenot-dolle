@@ -50,4 +50,8 @@ public class CapaciteObjectif implements Capacite {
     public Point getPointObjectif() {
         return pointObjectif;
     }
+
+    public void setPointObjectif(Point pointObjectif) {
+        this.pointObjectif = pointObjectif;
+    }
 }

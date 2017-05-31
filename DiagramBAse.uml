@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="721.1500468164788" y="498.0">vue.TortueVue</node>
+    <node x="1063.8541666666667" y="355.0">modele.TortueIntelligente</node>
+    <node x="36.5" y="708.0">modele.LogoTortue</node>
+    <node x="306.0833333333334" y="355.0">modele.obstacle</node>
+    <node x="503.5042134831455" y="476.0">controleur.ObstacleControleur</node>
+    <node x="1123.892556179775" y="1029.0">controleur.TortueAutonomeControleur</node>
+    <node x="80.19171348314546" y="79.0">modele.Tortue</node>
+    <node x="425.33333333333337" y="950.0">vue.FenetreTortueControlableVue</node>
+    <node x="960.9342228464416" y="498.0">controleur.TortueIntelligenteControleur</node>
+    <node x="1067.8494850187267" y="244.0">modele.capacite</node>
+    <node x="82.16198501872657" y="619.0">modele.FeuilleDessin</node>
+    <node x="866.2467228464416" y="619.0">vue.TortueIntelligenteVue</node>
+    <node x="820.7291666666667" y="333.0">controleur.CapaciteControleur</node>
+    <node x="688.9166666666667" y="950.0">controleur.TortueControleur</node>
+    <node x="31.066713483145463" y="0.0">modele.Segment</node>
+    <node x="443.625" y="1029.0">controleur.TortueControlableControleur</node>
+    <node x="146.06671348314546" y="0.0">modele.forme</node>
+    <node x="1148.5416666666665" y="950.0">vue.FenetreTortueAutonomeVue</node>
+    <node x="1230.8958333333335" y="244.0">modele.TortueAutonome</node>
+    <node x="810.6411516853932" y="244.0">vue.capaciteVue</node>
+    <node x="466.7244850187265" y="787.0">vue.MainVue</node>
+    <node x="362.3972378277151" y="619.0">controleur.EnvironnementControleur</node>
+    <node x="334.5042134831455" y="498.0">vue.EnvironnementVue</node>
+    <node x="154.50421348314546" y="498.0">modele.environnement</node>
+    <node x="568.5042134831456" y="355.0">vue.obstacleVue</node>
+    <node x="894.8958333333334" y="1118.0">Main</node>
+    <node x="625.1411516853932" y="708.0">vue.FeuilleDessinVue</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="modele.LogoTortue" target="modele.Tortue">
+      <point x="-41.25" y="-14.5" />
+      <point x="50.70833333333337" y="204.0" />
+      <point x="105.87921348314546" y="204.0" />
+      <point x="-42.8125" y="47.5" />
+    </edge>
+    <edge source="vue.MainVue" target="controleur.TortueControleur">
+      <point x="33.25" y="36.5" />
+      <point x="632.9744850187265" y="900.0" />
+      <point x="747.25" y="900.0" />
+      <point x="-11.666666666666629" y="-14.5" />
+    </edge>
+    <edge source="controleur.TortueIntelligenteControleur" target="modele.TortueIntelligente">
+      <point x="24.875" y="-14.5" />
+      <point x="1085.3092228464416" y="456.0" />
+      <point x="1117.1041666666667" y="456.0" />
+      <point x="-17.75" y="14.5" />
+    </edge>
+    <edge source="vue.TortueVue" target="modele.Tortue">
+      <point x="0.0" y="-14.5" />
+      <point x="772.6500468164788" y="214.0" />
+      <point x="174.37921348314546" y="214.0" />
+      <point x="25.6875" y="47.5" />
+    </edge>
+    <edge source="controleur.TortueAutonomeControleur" target="modele.TortueAutonome">
+      <point x="49.25" y="-14.5" />
+      <point x="1271.642556179775" y="1009.0" />
+      <point x="1373.7291666666665" y="1009.0" />
+      <point x="1373.7291666666665" y="313.0" />
+      <point x="1347.5625" y="313.0" />
+      <point x="46.66666666666663" y="14.5" />
+    </edge>
+    <edge source="modele.environnement" target="vue.obstacleVue">
+      <point x="53.333333333333314" y="-14.5" />
+      <point x="287.8375468164788" y="456.0" />
+      <point x="592.3375468164788" y="456.0" />
+      <point x="-47.666666666666664" y="14.5" />
+    </edge>
+    <edge source="vue.TortueIntelligenteVue" target="controleur.TortueIntelligenteControleur">
+      <point x="54.0" y="-14.5" />
+      <point x="1001.2467228464416" y="599.0" />
+      <point x="985.8092228464416" y="599.0" />
+      <point x="-74.625" y="14.5" />
+    </edge>
+    <edge source="vue.FeuilleDessinVue" target="vue.TortueIntelligenteVue">
+      <point x="34.0" y="-14.5" />
+      <point x="727.1411516853932" y="678.0" />
+      <point x="947.2467228464416" y="678.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="vue.MainVue" target="controleur.EnvironnementControleur">
+      <point x="-88.66666666666669" y="-36.5" />
+      <point x="511.0578183520598" y="762.0" />
+      <point x="408.8972378277151" y="762.0" />
+      <point x="-46.5" y="14.5" />
+    </edge>
+    <edge source="controleur.TortueControleur" target="vue.MainVue">
+      <point x="-35.0" y="-14.5" />
+      <point x="723.9166666666667" y="910.0" />
+      <point x="566.4744850187265" y="910.0" />
+      <point x="-33.25" y="36.5" />
+    </edge>
+    <edge source="Main" target="controleur.TortueControlableControleur">
+      <point x="-18.75" y="-14.5" />
+      <point x="913.6458333333334" y="1088.0" />
+      <point x="544.625" y="1088.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="vue.FeuilleDessinVue" target="vue.TortueVue">
+      <point x="11.333333333333314" y="-14.5" />
+      <point x="704.4744850187266" y="668.0" />
+      <point x="731.6917134831456" y="668.0" />
+      <point x="731.6917134831456" y="599.0" />
+      <point x="759.7750468164788" y="599.0" />
+      <point x="-12.875" y="14.5" />
+    </edge>
+    <edge source="controleur.EnvironnementControleur" target="vue.obstacleVue">
+      <point x="77.5" y="-14.5" />
+      <point x="532.8972378277151" y="579.0" />
+      <point x="696.0042134831456" y="579.0" />
+      <point x="696.0042134831456" y="456.0" />
+      <point x="687.6708801498122" y="456.0" />
+      <point x="47.66666666666666" y="14.5" />
+    </edge>
+    <edge source="controleur.TortueIntelligenteControleur" target="vue.capaciteVue">
+      <point x="-74.625" y="-14.5" />
+      <point x="985.8092228464416" y="436.0" />
+      <point x="808.2661516853932" y="436.0" />
+      <point x="808.2661516853932" y="313.0" />
+      <point x="828.5161516853932" y="313.0" />
+      <point x="-53.625" y="14.5" />
+    </edge>
+    <edge source="Main" target="modele.LogoTortue">
+      <point x="-31.25" y="-14.5" />
+      <point x="901.1458333333334" y="1098.0" />
+      <point x="86.0" y="1098.0" />
+      <point x="86.0" y="762.0" />
+      <point x="64.0" y="762.0" />
+      <point x="-27.5" y="14.5" />
+    </edge>
+    <edge source="vue.FenetreTortueAutonomeVue" target="modele.TortueIntelligente">
+      <point x="0.0" y="-14.5" />
+      <point x="1248.0416666666665" y="456.0" />
+      <point x="1188.1041666666667" y="456.0" />
+      <point x="53.25" y="14.5" />
+    </edge>
+    <edge source="vue.FeuilleDessinVue" target="modele.FeuilleDessin">
+      <point x="-56.666666666666686" y="-14.5" />
+      <point x="636.4744850187266" y="688.0" />
+      <point x="178.8286516853932" y="688.0" />
+      <point x="38.66666666666666" y="14.5" />
+    </edge>
+    <edge source="modele.TortueIntelligente" target="vue.capaciteVue">
+      <point x="-59.166666666666686" y="-14.5" />
+      <point x="1075.6875" y="303.0" />
+      <point x="900.0161516853932" y="303.0" />
+      <point x="17.875" y="14.5" />
+    </edge>
+    <edge source="controleur.CapaciteControleur" target="vue.capaciteVue">
+      <point x="-45.5" y="-36.5" />
+      <point x="866.2291666666667" y="313.0" />
+      <point x="864.2661516853932" y="313.0" />
+      <point x="-17.875" y="14.5" />
+    </edge>
+    <edge source="vue.FeuilleDessinVue" target="controleur.TortueIntelligenteControleur">
+      <point x="56.666666666666686" y="-14.5" />
+      <point x="749.8078183520599" y="688.0" />
+      <point x="1054.9342228464416" y="688.0" />
+      <point x="1054.9342228464416" y="599.0" />
+      <point x="1035.5592228464416" y="599.0" />
+      <point x="-24.875" y="14.5" />
+    </edge>
+    <edge source="modele.TortueIntelligente" target="modele.capacite">
+      <point x="11.833333333333329" y="-14.5" />
+      <point x="1146.6875" y="313.0" />
+      <point x="1144.7244850187267" y="313.0" />
+      <point x="15.375" y="14.5" />
+    </edge>
+    <edge source="vue.TortueIntelligenteVue" target="vue.TortueVue">
+      <point x="-54.0" y="-14.5" />
+      <point x="893.2467228464416" y="589.0" />
+      <point x="811.2750468164788" y="589.0" />
+      <point x="38.625" y="14.5" />
+    </edge>
+    <edge source="modele.environnement" target="modele.Tortue">
+      <point x="-53.33333333333337" y="-14.5" />
+      <point x="181.1708801498121" y="436.0" />
+      <point x="253.18422284644157" y="436.0" />
+      <point x="253.18422284644157" y="224.0" />
+      <point x="157.25421348314546" y="224.0" />
+      <point x="8.5625" y="47.5" />
+    </edge>
+    <edge source="modele.environnement" target="modele.obstacle">
+      <point x="0.0" y="-14.5" />
+      <point x="234.50421348314546" y="446.0" />
+      <point x="336.8333333333334" y="446.0" />
+      <point x="-30.75" y="14.5" />
+    </edge>
+    <edge source="controleur.EnvironnementControleur" target="controleur.ObstacleControleur">
+      <point x="46.5" y="-14.5" />
+      <point x="501.8972378277151" y="569.0" />
+      <point x="594.5042134831456" y="569.0" />
+      <point x="0.0" y="36.5" />
+    </edge>
+    <edge source="modele.capacite" target="modele.Tortue">
+      <point x="0.0" y="-14.5" />
+      <point x="1129.3494850187267" y="204.0" />
+      <point x="191.50421348314546" y="204.0" />
+      <point x="42.8125" y="47.5" />
+    </edge>
+    <edge source="controleur.TortueControlableControleur" target="controleur.TortueControleur">
+      <point x="50.5" y="-14.5" />
+      <point x="595.125" y="1009.0" />
+      <point x="723.9166666666667" y="1009.0" />
+      <point x="-35.0" y="14.5" />
+    </edge>
+    <edge source="vue.FenetreTortueControlableVue" target="vue.MainVue">
+      <point x="0.0" y="-14.5" />
+      <point x="527.3333333333334" y="930.0" />
+      <point x="499.9744850187265" y="930.0" />
+      <point x="-99.75" y="36.5" />
+    </edge>
+    <edge source="controleur.CapaciteControleur" target="modele.capacite">
+      <point x="45.5" y="-36.5" />
+      <point x="957.2291666666667" y="313.0" />
+      <point x="1083.2244850187267" y="313.0" />
+      <point x="-46.125" y="14.5" />
+    </edge>
+    <edge source="modele.FeuilleDessin" target="modele.environnement">
+      <point x="29.0" y="-14.5" />
+      <point x="169.16198501872657" y="599.0" />
+      <point x="194.50421348314546" y="599.0" />
+      <point x="-40.0" y="14.5" />
+    </edge>
+    <edge source="Main" target="controleur.TortueAutonomeControleur">
+      <point x="18.75" y="-14.5" />
+      <point x="951.1458333333334" y="1088.0" />
+      <point x="1222.392556179775" y="1088.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="vue.MainVue" target="vue.FeuilleDessinVue">
+      <point x="0.0" y="-36.5" />
+      <point x="599.7244850187265" y="762.0" />
+      <point x="647.8078183520599" y="762.0" />
+      <point x="-45.33333333333334" y="14.5" />
+    </edge>
+    <edge source="Main" target="vue.FenetreTortueControlableVue">
+      <point x="-6.25" y="-14.5" />
+      <point x="926.1458333333334" y="1078.0" />
+      <point x="656.125" y="1078.0" />
+      <point x="656.125" y="999.0" />
+      <point x="527.3333333333334" y="999.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="Main" target="controleur.TortueIntelligenteControleur">
+      <point x="6.25" y="-14.5" />
+      <point x="938.6458333333334" y="1078.0" />
+      <point x="1082.517556179775" y="1078.0" />
+      <point x="1082.517556179775" y="599.0" />
+      <point x="1135.0592228464416" y="599.0" />
+      <point x="74.625" y="14.5" />
+    </edge>
+    <edge source="modele.Tortue" target="modele.Segment">
+      <point x="-17.125" y="-47.5" />
+      <point x="131.56671348314546" y="54.0" />
+      <point x="102.31671348314546" y="54.0" />
+      <point x="23.75" y="14.5" />
+    </edge>
+    <edge source="vue.FeuilleDessinVue" target="controleur.TortueControleur">
+      <point x="45.33333333333337" y="14.5" />
+      <point x="738.4744850187267" y="762.0" />
+      <point x="749.5578183520599" y="762.0" />
+      <point x="749.5578183520599" y="890.0" />
+      <point x="770.5833333333334" y="890.0" />
+      <point x="11.666666666666686" y="-14.5" />
+    </edge>
+    <edge source="controleur.TortueAutonomeControleur" target="controleur.TortueControleur">
+      <point x="-49.25" y="-14.5" />
+      <point x="1173.142556179775" y="1009.0" />
+      <point x="793.9166666666667" y="1009.0" />
+      <point x="35.0" y="14.5" />
+    </edge>
+    <edge source="controleur.ObstacleControleur" target="modele.obstacle">
+      <point x="-45.5" y="-36.5" />
+      <point x="549.0042134831456" y="446.0" />
+      <point x="398.3333333333334" y="446.0" />
+      <point x="30.75" y="14.5" />
+    </edge>
+    <edge source="modele.Tortue" target="modele.forme">
+      <point x="17.125" y="-47.5" />
+      <point x="165.81671348314546" y="54.0" />
+      <point x="173.81671348314546" y="54.0" />
+      <point x="-27.75" y="14.5" />
+    </edge>
+    <edge source="controleur.EnvironnementControleur" target="vue.EnvironnementVue">
+      <point x="-46.5" y="-14.5" />
+      <point x="408.8972378277151" y="589.0" />
+      <point x="359.33754681647883" y="589.0" />
+      <point x="-49.666666666666686" y="14.5" />
+    </edge>
+    <edge source="controleur.TortueControleur" target="modele.LogoTortue">
+      <point x="-58.333333333333314" y="-14.5" />
+      <point x="700.5833333333334" y="920.0" />
+      <point x="126.75421348314546" y="920.0" />
+      <point x="126.75421348314546" y="762.0" />
+      <point x="119.0" y="762.0" />
+      <point x="27.5" y="14.5" />
+    </edge>
+    <edge source="modele.forme" target="modele.Tortue">
+      <point x="27.75" y="14.5" />
+      <point x="229.31671348314546" y="54.0" />
+      <point x="200.06671348314546" y="54.0" />
+      <point x="51.375" y="-47.5" />
+    </edge>
+    <edge source="modele.FeuilleDessin" target="modele.Tortue">
+      <point x="-29.0" y="-14.5" />
+      <point x="111.16198501872657" y="599.0" />
+      <point x="118.66198501872657" y="599.0" />
+      <point x="118.66198501872657" y="224.0" />
+      <point x="140.12921348314546" y="224.0" />
+      <point x="-8.5625" y="47.5" />
+    </edge>
+    <edge source="controleur.TortueIntelligenteControleur" target="controleur.TortueControleur">
+      <point x="24.875" y="14.5" />
+      <point x="1085.3092228464416" y="589.0" />
+      <point x="1065.9342228464416" y="589.0" />
+      <point x="1065.9342228464416" y="930.0" />
+      <point x="817.25" y="930.0" />
+      <point x="58.333333333333314" y="-14.5" />
+    </edge>
+    <edge source="modele.TortueAutonome" target="modele.Tortue">
+      <point x="0.0" y="-14.5" />
+      <point x="1300.8958333333335" y="194.0" />
+      <point x="208.62921348314546" y="194.0" />
+      <point x="59.9375" y="47.5" />
+    </edge>
+    <edge source="Main" target="vue.FenetreTortueAutonomeVue">
+      <point x="31.25000000000003" y="-14.5" />
+      <point x="963.6458333333334" y="1098.0" />
+      <point x="1331.392556179775" y="1098.0" />
+      <point x="1331.392556179775" y="999.0" />
+      <point x="1248.0416666666665" y="999.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="controleur.ObstacleControleur" target="vue.obstacleVue">
+      <point x="45.5" y="-36.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="vue.FenetreTortueAutonomeVue" target="modele.TortueAutonome">
+      <point x="66.33333333333337" y="-14.5" />
+      <point x="1314.375" y="930.0" />
+      <point x="1318.7291666666665" y="930.0" />
+      <point x="1318.7291666666665" y="313.0" />
+      <point x="1300.8958333333335" y="313.0" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="controleur.EnvironnementControleur" target="modele.environnement">
+      <point x="-77.5" y="-14.5" />
+      <point x="377.8972378277151" y="599.0" />
+      <point x="274.50421348314546" y="599.0" />
+      <point x="40.0" y="14.5" />
+    </edge>
+    <edge source="modele.LogoTortue" target="modele.FeuilleDessin">
+      <point x="41.25" y="-14.5" />
+      <point x="132.75" y="688.0" />
+      <point x="140.16198501872657" y="688.0" />
+      <point x="-7.105427357601002E-15" y="14.5" />
+    </edge>
+    <edge source="vue.TortueVue" target="controleur.TortueControleur">
+      <point x="12.875" y="14.5" />
+      <point x="785.5250468164788" y="599.0" />
+      <point x="820.0250468164788" y="599.0" />
+      <point x="820.0250468164788" y="920.0" />
+      <point x="793.9166666666667" y="920.0" />
+      <point x="35.0" y="-14.5" />
+    </edge>
+    <edge source="vue.FeuilleDessinVue" target="controleur.EnvironnementControleur">
+      <point x="-34.0" y="-14.5" />
+      <point x="659.1411516853932" y="678.0" />
+      <point x="501.8972378277151" y="678.0" />
+      <point x="46.5" y="14.5" />
+    </edge>
+    <edge source="vue.EnvironnementVue" target="controleur.EnvironnementControleur">
+      <point x="49.66666666666663" y="14.5" />
+      <point x="458.67088014981215" y="599.0" />
+      <point x="470.8972378277151" y="599.0" />
+      <point x="15.5" y="-14.5" />
+    </edge>
+    <edge source="controleur.TortueControlableControleur" target="modele.Tortue">
+      <point x="-50.5" y="-14.5" />
+      <point x="494.125" y="1009.0" />
+      <point x="26.0" y="1009.0" />
+      <point x="26.0" y="194.0" />
+      <point x="88.75421348314546" y="194.0" />
+      <point x="-59.9375" y="47.5" />
+    </edge>
+    <edge source="vue.FenetreTortueAutonomeVue" target="vue.MainVue">
+      <point x="-66.33333333333331" y="-14.5" />
+      <point x="1181.7083333333333" y="880.0" />
+      <point x="699.4744850187265" y="880.0" />
+      <point x="99.75" y="36.5" />
+    </edge>
+    <edge source="modele.TortueIntelligente" target="modele.TortueAutonome">
+      <point x="59.166666666666686" y="-14.5" />
+      <point x="1194.0208333333335" y="313.0" />
+      <point x="1254.2291666666667" y="313.0" />
+      <point x="-46.666666666666664" y="14.5" />
+    </edge>
+    <edge source="modele.capacite" target="modele.TortueIntelligente">
+      <point x="46.125" y="14.5" />
+      <point x="1175.4744850187267" y="313.0" />
+      <point x="1170.3541666666667" y="313.0" />
+      <point x="35.5" y="-14.5" />
+    </edge>
+    <edge source="controleur.TortueIntelligenteControleur" target="controleur.CapaciteControleur">
+      <point x="-24.875" y="-14.5" />
+      <point x="1035.5592228464416" y="426.0" />
+      <point x="911.7291666666667" y="426.0" />
+      <point x="0.0" y="36.5" />
+    </edge>
+    <edge source="vue.TortueIntelligenteVue" target="modele.TortueIntelligente">
+      <point x="0.0" y="-14.5" />
+      <point x="947.2467228464416" y="446.0" />
+      <point x="1081.6041666666667" y="446.0" />
+      <point x="-53.25" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7463581833761782" x="700.0" y="573.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>packageLocal</VISIBILITY>
+</Diagram>
+

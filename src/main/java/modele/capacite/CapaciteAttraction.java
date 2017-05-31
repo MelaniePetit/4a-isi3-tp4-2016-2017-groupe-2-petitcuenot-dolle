@@ -48,6 +48,7 @@ public class CapaciteAttraction implements Capacite {
 
     public synchronized void attracter(){
         int distMin = Integer.MAX_VALUE;
+
         //Mettre une direction et une vitesse moyenne
         if (!voisins.isEmpty()) {
             int directioGlobal = 0;
@@ -62,7 +63,6 @@ public class CapaciteAttraction implements Capacite {
                 if (distTest < distMin) {
                     distMin = distTest;
                 }
-
             }
 
             directioGlobal /= voisins.size();
@@ -72,6 +72,11 @@ public class CapaciteAttraction implements Capacite {
                 t.setDir(directioGlobal);
                 t.setVitesse(vitesseGlobal);
             }
+
+            if(distMin < 5) {
+                vitesseGlobal = vitesseGlobal - 10;
+            }
+
 
         }
     }
