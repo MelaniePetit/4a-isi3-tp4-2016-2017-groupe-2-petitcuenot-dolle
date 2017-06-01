@@ -34,7 +34,7 @@ public class FenetreTortueAutonomeVue extends MainVue {
         }
         else{
             //ajouter des tortues intelligente
-            for (int i = 0; i < 200 ; i++){
+            for (int i = 0; i < 1 ; i++){
                 boolean create = true;
                 TortueIntelligente t = new TortueIntelligente();
 
