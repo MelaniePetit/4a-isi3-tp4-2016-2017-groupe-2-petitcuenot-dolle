@@ -28,7 +28,6 @@ public class TortueIntelligente extends TortueAutonome {
 //        rayon = 50;
         this.listCapacites = new ArrayList<>();
         this.listCapacitesVues = new ArrayList<>();
-//
 //        add(new CapaciteCouleurAttraction(this, 30),new CapaciteAttractionVue());
         add(new CapaciteObjectif(this, new Point(400,400)), new CapaciteObjectifPointVue());
 
