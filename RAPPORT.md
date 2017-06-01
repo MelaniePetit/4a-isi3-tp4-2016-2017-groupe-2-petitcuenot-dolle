@@ -40,7 +40,7 @@ de pouvoir les interchanger sans modifier tout notre code.
 
 Ainsi, dans la classe _EnvironementControleur_ se trouve un _EnvironementFactory_ qui nous permetra, 
 lors de son instanciation de choisir le type d'environement qui sera généré. Ci dessous quelques exemples :
-#####Cadriage
+####Cadriage :
 ```java
 public EnvironnementControleur() {
         this.environementFactory = new CadriageEnvironementFactory();
@@ -49,7 +49,7 @@ public EnvironnementControleur() {
         genererObstacles();
     }
 ```
-#####Bordure
+####Bordure :
 ```java
 public EnvironnementControleur() {
         this.environementFactory = new BorderedEnvironmentFactory();
@@ -101,6 +101,7 @@ Nous avons créé plusieurs types de capacités :
  - Détection d'obstacles
  
 **Attraction & attraction par couleur**
+
 Lorsque cette capacité est lancée, chaque tortue construit sa liste de voisin en fonction de la distance qui les sépares.
 Il s’agit donc d'une sorte de champ d'attraction autour de chaque tortue. Donc, une fois la liste construite, 
 une direction moyenne est créé est appliquée à chaque tortues qui sont voisines. De cette façon, les tortues vont partir sur la 
@@ -129,8 +130,11 @@ Il suffit donc de vérifier non plus juste la distance qui sépare 2 tortue mais
 
 **Objectif et curseur objectif**
 
-```java
-```
+Pour arriver à cela, nous avons un point objectif au sein de cette capacité. Nous construisons un vecteur entre ce point objectif et les tortues.
+nous avons ainsi la direction que nous appliquons à nos tortues.
+
+Pour la capacité curseur objectif, nous avons _extends_ la capacité précédente en mettant à jour le point objectif avec la position du curseur sur l'écran.
+
 
 **Détection d'obstacles**
 
