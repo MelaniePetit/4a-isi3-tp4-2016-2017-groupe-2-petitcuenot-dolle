@@ -3,10 +3,7 @@ package modele;
 
 import modele.capacite.*;
 import modele.environnement.Environment;
-import vue.capaciteVue.CapaciteAttractionVue;
-import vue.capaciteVue.CapaciteObjectifVue;
-import vue.capaciteVue.CapaciteObstacleVue;
-import vue.capaciteVue.CapaciteVue;
+import vue.capaciteVue.*;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -33,11 +30,11 @@ public class TortueIntelligente extends TortueAutonome {
         this.listCapacitesVues = new ArrayList<>();
 //
 //        add(new CapaciteCouleurAttraction(this, 30),new CapaciteAttractionVue());
-        add(new CapaciteObjectif(this, new Point(400,400)), new CapaciteObjectifVue());
+        add(new CapaciteObjectif(this, new Point(400,400)), new CapaciteObjectifPointVue());
 
-        add(new CapaciteObstacle(this,6,20,15),new CapaciteObstacleVue());
-        add(new CapaciteObstacle(this,3,45,10),new CapaciteObstacleVue());
-        add(new CapaciteObstacle(this,1,90,5),new CapaciteObstacleVue());
+        add(new CapaciteObstacle(this,6,20,15),new CapaciteInvisibleVue());
+        add(new CapaciteObstacle(this,3,45,10),new CapaciteInvisibleVue());
+        add(new CapaciteObstacle(this,1,90,5),new CapaciteInvisibleVue());
 
     }
 

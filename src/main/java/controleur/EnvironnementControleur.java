@@ -21,7 +21,7 @@ public class EnvironnementControleur {
     private ArrayList<ObstacleVue> listObstacleVue;
 
     public EnvironnementControleur() {
-        this.environementFactory = new AleatoireEnvironmentFactory();
+        this.environementFactory = new BorderedEnvironmentFactory();
         this.environnementVue = new EnvironnementVue(this);
         listObstacleVue = new ArrayList<>();
         genererObstacles();

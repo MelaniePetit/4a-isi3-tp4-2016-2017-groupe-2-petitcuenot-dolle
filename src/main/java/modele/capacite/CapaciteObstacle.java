@@ -56,11 +56,24 @@ public class CapaciteObstacle implements Capacite{
         boolean turn = true;
         for (Obstacle o : obstacles) {
             if (o.estDansObstacle(moustacheDroite.x,moustacheDroite.y)){
-                currentTortue.setDir(currentTortue.getDir() + angle);
+//                while(turn){
+                    currentTortue.setDir(currentTortue.getDir() + angle);
+//                    if (!o.estDansObstacle(moustacheDroite.x,moustacheDroite.y)){
+//                        turn = false;
+//                    }
+//                    moustacheDroite = moustacheDroiteObstacle(size);
+//                }
                 return;
             }
             if (o.estDansObstacle(moustacheGauche.x,moustacheGauche.y)){
-                currentTortue.setDir(currentTortue.getDir() - angle);
+//                while (turn){
+                    currentTortue.setDir(currentTortue.getDir() - angle);
+//                    if (!o.estDansObstacle(moustacheGauche.x,moustacheGauche.y)){
+//                        turn=false;
+//                    }
+//                    moustacheGauche = moustacheGaucheObstacle(size);
+//                }
+
                 return;
             }
         }

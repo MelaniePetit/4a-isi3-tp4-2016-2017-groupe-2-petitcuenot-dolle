@@ -9,6 +9,7 @@ import modele.obstacle.Obstacle;
 import javax.swing.*;
 
 /**
+ *
  * Created by Mel on 19/04/2017.
  */
 public class FenetreTortueAutonomeVue extends MainVue {
