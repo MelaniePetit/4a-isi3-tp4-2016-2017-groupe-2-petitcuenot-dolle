@@ -27,8 +27,8 @@ public class TortueIntelligente extends TortueAutonome {
         super();
         this.listCapacites = new ArrayList<>();
         this.listCapacitesVues = new ArrayList<>();
-//        add(new CapaciteCouleurAttraction(this, 30),new CapaciteAttractionVue());
-//        add(new CapaciteCurseur(this), new CapaciteObjectifVue());
+        add(new CapaciteCouleurAttraction(this, 30),new CapaciteAttractionVue());
+        add(new CapaciteCurseur(this), new CapaciteObjectifVue());
         add(new CapaciteObstacle(this,6,20,15),new CapaciteObstacleVue());
         add(new CapaciteObstacle(this,3,45,10),new CapaciteObstacleVue());
         add(new CapaciteObstacle(this,1,10,45),new CapaciteObstacleVue());
